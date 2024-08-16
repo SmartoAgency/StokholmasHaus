@@ -1,0 +1,29 @@
+
+- 
+    var aboutItems = [
+        {
+            title: 'квартир',
+            count: '38',
+        },
+        {
+            title: 'потолки',
+            count: '3.5 м',
+        },
+        {
+            title: 'паркоместа',
+            count: 42,
+        },
+    ];
+
+section.home-screen2.screen-home
+    .home-screen2-row.container
+        .home-screen2-desc
+            h2.home-screen-title Историческое Наследие и Современный Комфорт в Сердце Межапарка
+            p.home-screen-subtitle StokholmasHaus26 — комплекс из двух клубных жилых домов и коммерческого объекта в престижном районе Риги — Межапарке. Здания с качественной, современной реновацией гармонично сочетают городской стиль жизни с природным ансамблем. Элегантный буржуазный дизайн, технические инновации и удобства продуманы до мелочей.
+        ul.home-screen2-info
+            each item in aboutItems
+                li 
+                    span= item.count
+                    span= item.title
+    .home-screen2-img.main-image-decor
+        +img('home/home-page-screen2.png')

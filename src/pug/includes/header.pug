@@ -1,0 +1,50 @@
+- 
+    var menu = [
+        {
+            title: 'Про комплекс',
+            link: '#',
+        },
+        {
+            title: 'Наши преимущества',
+            link: '#',
+        },
+        {
+            title: 'Галерея',
+            link: '#',
+        },
+        {
+            title: 'Планировки',
+            link: '#',
+        },
+        {
+            title: 'Контакти',
+            link: '#',
+        },
+    ]
+
+header(class="header "+header_class)
+    .container
+        .header-row
+            a(href="/").header-logo StokholmasHAUS 26
+            nav
+                ul.header-menu
+                    each item in menu
+                        li 
+                            a(href= item.link data-title= item.title).header-menu__link.text-style-1920-nav.color-graphite= item.title
+            .header-info
+                a(href="tel:380957211420") + 38 095 721 14 20
+                button.main-button Выбрать кваритиру
+                .sl-nav
+                        ul
+                            li
+                                b En
+                                <svg class="fa fa-angle-down" a width="24" height="24" viewBox="0 0 24 24"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10L12 15L17 10H7Z" fill="#28282A"/>
+                                </svg>
+
+                                .triangle
+                                ul
+                                    li
+                                        a.active Ru
+                                    li
+                                        a Ua
