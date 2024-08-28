@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     splitToLinesAndFadeUp('.home-screen-title');
 
-    if (deviceInfo.type !== 'mobile') {
-        frontScreenAnim(scroller, deviceInfo.type);
-    }
+    // if (deviceInfo.type !== 'mobile') {
+    //     frontScreenAnim(scroller, deviceInfo.type);
+    // }
 
     new Headroom(document.querySelector('header')).init();
     document.querySelector('.header').addEventListener('mouseenter', e => {
