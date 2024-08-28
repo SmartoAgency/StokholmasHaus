@@ -7,10 +7,35 @@ const config = {
         'immediate-loading': './src/assets/scripts/immediate-loading.js',
         home: './src/assets/scripts/home.js',
         index: './src/assets/scripts/index-app.js',
-        common: './src/assets/scripts/common.js',
+        // common: './src/assets/scripts/common.js',
     },
     output: {
         filename: '[name].bundle.js',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/, // Exclude all node_modules
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
+            },
+            {
+                test: /\.mjs$/,
+                include: /node_modules\/(@studio-freight\/lenis)/, // Specifically include lenis
+                type: 'javascript/auto', // Add this line to properly handle the .mjs file
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
+            },
+        ],
     },
     optimization: {
         splitChunks: {

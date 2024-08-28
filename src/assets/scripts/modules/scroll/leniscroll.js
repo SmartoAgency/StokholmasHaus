@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Lenis from 'lenis';
+import Lenis from '@studio-freight/lenis';
 
 export const lenis = new Lenis();
 
