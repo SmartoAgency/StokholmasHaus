@@ -2,7 +2,7 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'project'
+    var title_page = 'home'
     var id_page = 'home'
     var class_page = 'home '
     var genplan = [
@@ -24,13 +24,18 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
-  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
 block content
   include ../includes/homepage/screen1.pug
   include ../includes/homepage/screen2.pug
   include ../includes/homepage/screen3.pug
   include ../includes/homepage/screen4.pug
   include ../includes/homepage/screen5.pug
+  include ../includes/homepage/screen6.pug
+  include ../includes/homepage/screen7.pug
+  include ../includes/homepage/screen8.pug
+  include ../includes/homepage/screen9.pug
+  include ../includes/homepage/screen10.pug
 
 block footer
   include ../includes/footer.pug

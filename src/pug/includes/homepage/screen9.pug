@@ -1,0 +1,34 @@
+- 
+    var apartments = [
+        {
+            name: "apartment-button",
+            title: "Stokholmas 26",
+            value: 3,
+            id: "stokholmas-26__1",
+        },
+        {
+            name: "apartment-button",
+            title: "Stokholmas 26 c",
+            value: 4,
+            id: "stokholmas-26_c__2",
+        },
+        {
+            name: "apartment-button",
+            title: "Stokholmas 26 A",
+            value: 5,
+            id: "stokholmas-26_a",
+        },
+    ];
+
+section.home-screen9.screen-home
+    .home-screen9-row.container
+        .home-screen9-text
+            h2.home-screen-title Визуальное путешествие по StokholmasHaus26
+            p.home-screen-subtitle Погрузитесь в атмосферу элегантности и современного комфорта с нашей галереей изображений StokholmasHaus26. Каждое фото передает уникальную эстетику и изысканность нашего комплекса, отражая гармонию архитектурных решений и природного окружения.
+        ul.home-screen8-buttons
+            each apartment in apartments
+                li.home-screen8-buttons__item
+                    input(type="radio" name= apartment.name id= apartment.id value= apartment.value).decor-lines.apartment-button
+                    label(for= apartment.id).label-button= apartment.title
+        .home-screen8-img 
+            +img('home/home-page-screen9.jpg')

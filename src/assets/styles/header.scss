@@ -1,8 +1,12 @@
 .header {
-    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
     z-index: 3;
     padding: 38px 0 48px 0;
-    color: #424242;
+    color: $mc;
+    transition: transform 0.3s ease;
+
     &-row {
         // @include tFlex();
         display: flex;
@@ -23,7 +27,7 @@
     &-menu {
         @include tFlex();
         gap: 40px;
-        font: 500 18px/100% 'SF Pro Display', sans-serif;
+        font: 500 18px/100% $default-font2, sans-serif;
         @include adaptive-font(18, 14, 1880);
         overflow: hidden;
         text-overflow: ellipsis;
@@ -76,9 +80,14 @@
         @include tFlex();
         @include adaptive-font(18, 14, 1880);
         gap: 20px;
-        // padding-left: 136px;
-        padding-left: 7.08vw;
-        font: 500 18px/100% 'SF Pro Display', sans-serif;
+        margin-left: adaptive-size-width(186);
+        @media (max-width: 1500px) {
+            margin-left: adaptive-size-width(86);
+        }
+        @media (max-width: 1300px) {
+            margin-left: adaptive-size-width(23);
+        }
+        font: 500 18px/100% $default-font2, sans-serif;
         @include to(1380px) {
             gap: 10px;
         }
@@ -86,6 +95,49 @@
 
     .main-button {
         padding: 18px;
+    }
+}
+
+.header {
+    &.headroom--top {
+        // background-color: transparent !important;
+        // transform: translateY(10%);
+    }
+    &.headroom--not-top {
+        background-color: transparentize($wc, 0.2);
+    }
+
+    &.headroom--pinned,
+    &.headroom--unpinned {
+        // transform: translateY(-100%);
+        @at-root .header--dark .header.headroom--pinned {
+            background-color: transparent;
+        }
+        @at-root .header--dark .header.headroom--unpinned {
+            background-color: transparent;
+        }
+    }
+    &--dark.headroom--unpinned {
+        background-color: var(--color-white);
+    }
+    will-change: transform;
+    &.headroom--not-bottom.headroom--not-top.headroom--unpinned {
+        transform: translateY(-100%);
+    }
+
+    &.headroom:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 30px;
+        background-color: transparent;
+        pointer-events: none;
+        cursor: pointer;
+    }
+    &.headroom--unpinned:after {
+        pointer-events: all;
     }
 }
 

@@ -23,6 +23,7 @@
     ];
 section.home-screen5.screen-home
     .home-screen5-title
+        include ../homePageElements/home-screen5-element.pug
         h2 Мы эксклюзивны 
         span во всех отношениях
     .home-screen5-row
@@ -30,5 +31,11 @@ section.home-screen5.screen-home
             span.rectangle
             +img('home/home-page-screen5.png')
         ul.home-screen5-list
-            li 
-                +svg('list-icon__4')
+            each item, index in aboutList
+                if index === 2
+                    .delimiter-list
+                li 
+                    .home-screen5-list__img
+                        +svg(item.icon)
+                    h3.home-screen5-list__title= item.title
+                    p.home-screen5-list__desc= item.desc

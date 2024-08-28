@@ -50,7 +50,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 20.1vh;
+        height: 21%;
         background: linear-gradient(180deg, rgba(234, 229, 223, 0) 0%, #eae5df 100%);
         z-index: 4;
     }
@@ -63,15 +63,24 @@
 }
 
 .home-screen-title {
-    font: 350 80px/1 'Rain Tungsten';
+    font: 350 80px/1 $default-font;
     @include adaptive-font(80, 32);
     color: $mc4;
+    @media (max-width: 900px) {
+        max-width: 100% !important;
+        margin-bottom: 2vw !important;
+        text-align: center;
+    }
 }
 
 .home-screen-subtitle {
-    font: 300 18px/1.4 'SF Pro Display';
+    font: 300 18px/1.4 $default-font2;
     @include adaptive-font(18, 14);
-    color: #47443d;
+    color: $mc5;
+
+    @media (max-width: 900px) {
+        max-width: 100% !important;
+    }
 }
 
 .tablet {

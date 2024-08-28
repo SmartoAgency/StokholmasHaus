@@ -1,0 +1,34 @@
+- 
+    var questionsList = [
+        {
+            title: 'Где расположен Stokholmas Haus 26?',
+            text: 'Материал постройки – кирпич с энергоэффективным утеплением, толщина внешних стен 51 см. Предусмотрена звукоизоляция стен. Высота потолков от,,,,, до 3,40 м'
+        },
+        {
+            title: 'Можно ли разработать индивидуальный дизайн?',
+            text: 'Материал постройки – кирпич с энергоэффективным утеплением.'
+        },
+        {
+            title: 'Какие материалы используються в строительстве?',
+            text: 'Материал постройки – кирпич с энергоэффективным утеплением.'
+        },
+        {
+            title: 'Есть ли на територии паркинг?',
+            text: 'Материал постройки – кирпич с энергоэффективным утеплением.'
+        },
+    ];
+
+section.home-screen7.screen-home
+    .home-screen7-row.container
+        h2.home-screen-title Ответы на самые распространенные вопросы
+        ul.home-screen-answer-list.answer-list
+            each item in questionsList
+                li.answer-list__item
+                    button(answer-item__label)
+                        h3= item.title
+                        span(answer-list__item-icon)
+                            +svg('home-page-screen7__list-icon')
+                    p(answer-item__answer)= item.text
+    .home-screen7-img
+        include ../homePageElements/home-screen7-element.pug
+        +img('home/home-page-screen7.png')
