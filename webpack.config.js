@@ -15,8 +15,8 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/, // Exclude all node_modules
+                test: /\.m?js$/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -26,8 +26,8 @@ const config = {
             },
             {
                 test: /\.mjs$/,
-                include: /node_modules\/(@studio-freight\/lenis)/, // Specifically include lenis
-                type: 'javascript/auto', // Add this line to properly handle the .mjs file
+                include: /node_modules\/(@studio-freight\/lenis)/,
+                type: 'javascript/auto',
                 use: {
                     loader: 'babel-loader',
                     options: {

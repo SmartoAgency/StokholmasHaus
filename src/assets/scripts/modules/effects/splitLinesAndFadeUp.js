@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+
 export default function splitToLinesAndFadeUp(selector) {
     document.querySelectorAll(selector).forEach(text => {
         let mathM = text.innerHTML.match(
