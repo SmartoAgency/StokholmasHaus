@@ -63,6 +63,8 @@
 }
 
 .home-screen-title {
+    position: relative;
+    z-index: 3;
     font: 350 80px/1 $default-font;
     @include adaptive-font(80, 32);
     color: $mc4;

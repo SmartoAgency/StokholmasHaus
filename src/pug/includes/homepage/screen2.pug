@@ -23,7 +23,7 @@ section.home-screen2.screen-home
         ul.home-screen2-info
             each item in aboutItems
                 li 
-                    span= item.count
-                    span= item.title
+                    span.home-screen2-info__count= item.count
+                    span.home-screen2-info__title= item.title
     .home-screen2-img.main-image-decor
         +img('home/home-page-screen2.png')

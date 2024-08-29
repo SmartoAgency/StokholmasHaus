@@ -5,9 +5,8 @@ const config = {
     mode: process.argv.includes('--production') ? 'production' : 'development',
     entry: {
         'immediate-loading': './src/assets/scripts/immediate-loading.js',
-        home: './src/assets/scripts/home.js',
         index: './src/assets/scripts/index-app.js',
-        // common: './src/assets/scripts/common.js',
+        home: './src/assets/scripts/home/index.js',
     },
     output: {
         filename: '[name].bundle.js',
