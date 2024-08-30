@@ -17,6 +17,7 @@
 
     &-screen1 {
         padding-top: 109px;
+        overflow: clip;
         &-row {
             display: flex;
             flex-direction: column;
@@ -72,11 +73,11 @@
                 content: '';
                 position: absolute;
                 top: -250%;
-                right: -57.9%;
+                right: -66.8%;
                 width: 895px;
                 height: 1436px;
-                transform: rotate(-45deg);
-                background-color: $gray;
+                transform: rotate(-50deg);
+                background-color: #eae5df;
                 z-index: 1;
             }
             div {
@@ -119,14 +120,22 @@
                     &:before {
                         content: '';
                         position: absolute;
-                        top: 0;
-                        left: -28%;
+                        top: -170%;
+                        left: 15%;
                         width: 895px;
-                        height: 1436px;
-                        transform: rotate(-45deg);
-                        background-color: $wc;
-                        transform: rotate(-45deg) translate(20%, -20%);
+                        height: 2436px;
+                        transform: rotate(-50deg);
+                        background-color: #fff;
                         z-index: -2;
+                        // content: '';
+                        // position: absolute;
+                        // top: -120%;
+                        // left: -48%;
+                        // width: 895px;
+                        // height: 1436px;
+                        // transform: rotate(-50deg);
+                        // background-color: #fff;
+                        // z-index: -2;
                     }
                 }
                 span:nth-child(4) {
@@ -162,7 +171,7 @@
                     bottom: 0;
                     right: 0;
                     height: 20px;
-                    width: 908px;
+                    width: 1000px;
                     background-color: $mc3;
                 }
             }
@@ -535,10 +544,11 @@
                 max-width: adaptive-size-width(900);
             }
             &__item {
-                padding-bottom: 40px;
+                // padding-bottom: 40px;
                 border-bottom: 2px solid #d9d9d9;
                 color: $mc2;
                 button {
+                    padding-bottom: 40px;
                     @include tFlex(flex-start);
                     gap: adaptive-size-width(20);
                     width: 100%;

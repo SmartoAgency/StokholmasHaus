@@ -9,7 +9,7 @@ splitToLinesAndFadeUp('.home-screen-title');
 gsap.timeline({
     scrollTrigger: {
         trigger: '.home-screen1',
-        start: '70% top',
+        start: '62% top',
     },
 })
     .from('.home-screen2-info__count', {

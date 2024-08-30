@@ -14,10 +14,10 @@ const accordion = (triggerSelectors, textSelector, labelSelector, iconSelector) 
                 {
                     opacity: 0,
                     height: 0,
-                    marginTop: 0,
+                    marginBottom: 0,
                 },
                 {
-                    marginTop: 40,
+                    marginBottom: 40,
                     opacity: 1,
                     height: 'auto',
                     duration: 0.35,

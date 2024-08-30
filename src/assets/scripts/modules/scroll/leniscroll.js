@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis({
     smoothWheel: true,
-    duration: 1.2,
+    duration: 1.4,
 });
 
 function raf(time) {
