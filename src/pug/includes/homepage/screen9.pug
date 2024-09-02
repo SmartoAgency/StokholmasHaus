@@ -28,7 +28,6 @@ section.home-screen9.screen-home
         ul.home-screen8-buttons
             each apartment in apartments
                 li.home-screen8-buttons__item
-                    input(type="radio" name= apartment.name id= apartment.id value= apartment.value).decor-lines.apartment-button
-                    label(for= apartment.id).label-button= apartment.title
+                    button(value= apartment.value).label-button= apartment.title
         .home-screen8-img 
             +img('home/home-page-screen9.jpg')

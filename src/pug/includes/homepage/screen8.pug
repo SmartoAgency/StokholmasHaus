@@ -19,8 +19,7 @@ section.home-screen8
         ul.home-screen8-buttons
             each apartment in apartments
                 li.home-screen8-buttons__item
-                    input(type="radio" name= apartment.name id= apartment.id value= apartment.value).decor-lines.apartment-button
-                    label(for= apartment.id).label-button= apartment.title
+                    button(value= apartment.value).label-button= apartment.title
         .home-screen8-apartment
             .apartment-info
                 table
@@ -51,7 +50,10 @@ section.home-screen8
                 .apartment-level-buttons
                     button 1
                     button.apartment-level-btn__active 2 
-    .home-screen8-img 
+    .home-screen8-img
+        .home-screen8-img__badge-one
+            include ../homePageElements/pin.pug
+            +badge('Stokholmas 26 A')
         +img('home/home-page-screen8.png')
     .home-screen8-row.container
         .home-screen8-apartment

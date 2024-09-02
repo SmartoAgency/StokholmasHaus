@@ -49,20 +49,30 @@
         height: adaptive-size-width(326);
         background-color: $wc;
         z-index: 0;
-        &:before,
-        &:after {
-            content: '';
+        &-lines {
+            @include tFlex();
+            gap: adaptive-size-width(7);
             position: absolute;
-            top: -60%;
-            width: adaptive-size-width(22);
-            height: adaptive-size-width(386);
-            background-color: #ecebe9;
-        }
-        &:before {
-            right: adaptive-size-width(66);
-        }
-        &:after {
-            right: adaptive-size-width(95);
+            top: -50%;
+            right: -105%;
+            // top: -60%;
+            z-index: 3;
+            &:before,
+            &:after {
+                content: '';
+                // position: absolute;
+                // top: -60%;
+                width: adaptive-size-width(22);
+                height: adaptive-size-width(386);
+                background-color: #ecebe9;
+                z-index: 2;
+            }
+            &:before {
+                // right: adaptive-size-width(66);
+            }
+            &:after {
+                // right: adaptive-size-width(95);
+            }
         }
     }
 }
@@ -192,5 +202,124 @@
             height: 1px;
             background-color: #c9c5bf;
         }
+    }
+}
+
+.pin-inner {
+    .pin {
+        position: relative;
+        min-width: adaptive-size-width(360);
+        @include tFlex(flex-end, center);
+        gap: adaptive-size-width(20);
+    }
+    .left-line {
+        position: relative;
+        width: adaptive-size-width(180);
+        height: adaptive-size-width(68);
+        svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: adaptive-size-width(17);
+            right: adaptive-size-width(17);
+            width: adaptive-size-width(23);
+            height: adaptive-size-width(23);
+            border-radius: 100%;
+            background: transparentize($mc3, 0.2);
+            animation: ripple 1.5s linear infinite;
+            transition: all 0.7s ease-in;
+            z-index: 1;
+            @keyframes ripple {
+                0% {
+                    box-shadow: 0 0 0 0 rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(1) rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(3) rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(5) rgba($mc3, 0.3);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(8) rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(20) rgba($mc3, 0),
+                        0 0 0 adaptive-size-width(20) rgba($mc3, 0);
+                }
+            }
+        }
+    }
+    .badge {
+        position: relative;
+        bottom: adaptive-size-width(-23);
+        padding: adaptive-size-width(10);
+        // min-width: 163px;
+        font: normal 350 32px / 1 'Rain Tungsten';
+        @include adaptive-font(32, 14);
+        color: $wc;
+        text-align: center;
+        border-radius: 4px;
+        background: $mc;
+    }
+}
+
+.pin-inner-reverse {
+    .pin-reverse {
+        position: relative;
+        @include tFlex(flex-end, center);
+        flex-direction: row-reverse;
+        gap: adaptive-size-width(20);
+    }
+    .left-line-reverse {
+        position: relative;
+        width: adaptive-size-width(180);
+        height: adaptive-size-width(68);
+        svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: adaptive-size-width(17);
+            left: adaptive-size-width(17);
+            width: adaptive-size-width(23);
+            height: adaptive-size-width(23);
+            border-radius: 100%;
+            background: transparentize($mc3, 0.2);
+            animation: ripple 1.5s linear infinite;
+            transition: all 0.7s ease-in;
+            z-index: 1;
+            @keyframes ripple {
+                0% {
+                    box-shadow: 0 0 0 0 rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(1) rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(3) rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(5) rgba($mc3, 0.3);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(8) rgba($mc3, 0.3),
+                        0 0 0 adaptive-size-width(20) rgba($mc3, 0),
+                        0 0 0 adaptive-size-width(20) rgba($mc3, 0);
+                }
+            }
+        }
+    }
+    .badge-reverse {
+        position: relative;
+        top: adaptive-size-width(-40);
+        right: 0;
+        padding: adaptive-size-width(10);
+        // min-width: 163px;
+        font: normal 350 32px / 1 'Rain Tungsten';
+        @include adaptive-font(32, 14);
+        color: $wc;
+        text-align: center;
+        border-radius: 4px;
+        background: $mc;
     }
 }

@@ -67,7 +67,7 @@
     z-index: 3;
     font: 350 80px/1 $default-font;
     @include adaptive-font(80, 32);
-    color: $mc4;
+    color: $mc;
     @media (max-width: 900px) {
         max-width: 100% !important;
         margin-bottom: 2vw !important;

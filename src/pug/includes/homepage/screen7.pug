@@ -31,4 +31,13 @@ section.home-screen7.screen-home
                     p(answer-item__answer)= item.text
     .home-screen7-img
         include ../homePageElements/home-screen7-element.pug
+        include ../homePageElements/pin.pug
+        .home-screen7-img__badge-one
+            +badgeReverse('Stokholmas 26')
+        .home-screen7-img__badge-two
+            +badge('Stokholmas 26 C')
         +img('home/home-page-screen7.png')
+
+    //-         position: absolute;
+    //- top: 50%;
+    //- left: 50%;
