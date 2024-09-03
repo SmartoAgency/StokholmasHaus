@@ -80,7 +80,7 @@
         @include tFlex();
         @include adaptive-font(18, 14, 1880);
         gap: 20px;
-        margin-left: adaptive-size-width(186);
+        margin-left: adaptive-size-width(136);
         @media (max-width: 1500px) {
             margin-left: adaptive-size-width(86);
         }
