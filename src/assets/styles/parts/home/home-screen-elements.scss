@@ -293,20 +293,6 @@
             animation: ripple 1.5s linear infinite;
             transition: all 0.7s ease-in;
             z-index: 1;
-            @keyframes ripple {
-                0% {
-                    box-shadow: 0 0 0 0 rgba($mc3, 0.3),
-                        0 0 0 adaptive-size-width(1) rgba($mc3, 0.3),
-                        0 0 0 adaptive-size-width(3) rgba($mc3, 0.3),
-                        0 0 0 adaptive-size-width(5) rgba($mc3, 0.3);
-                }
-                100% {
-                    box-shadow: 0 0 0 0 rgba($mc3, 0.3),
-                        0 0 0 adaptive-size-width(8) rgba($mc3, 0.3),
-                        0 0 0 adaptive-size-width(20) rgba($mc3, 0),
-                        0 0 0 adaptive-size-width(20) rgba($mc3, 0);
-                }
-            }
         }
     }
     .badge-reverse {
@@ -321,5 +307,17 @@
         text-align: center;
         border-radius: 4px;
         background: $mc;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba($mc3, 0.3), 0 0 0 adaptive-size-width(1) rgba($mc3, 0.3),
+            0 0 0 adaptive-size-width(3) rgba($mc3, 0.3),
+            0 0 0 adaptive-size-width(5) rgba($mc3, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($mc3, 0.3), 0 0 0 adaptive-size-width(8) rgba($mc3, 0.3),
+            0 0 0 adaptive-size-width(20) rgba($mc3, 0), 0 0 0 adaptive-size-width(20) rgba($mc3, 0);
     }
 }

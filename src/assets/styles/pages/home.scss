@@ -790,12 +790,17 @@
             @extend .home-screen5-title;
             margin-bottom: adaptive-size-width(155);
         }
+        &-container {
+            position: relative;
+            width: 100%;
+            height: adaptive-size-width(949);
+        }
         &-map {
-            height: 949px;
-            svg {
-                height: 100%;
-                width: 100%;
-            }
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
         }
         #map {
             height: 100%;

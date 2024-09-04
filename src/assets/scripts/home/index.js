@@ -1,6 +1,8 @@
 import './animation';
+
 import accordion from '../modules/accordion';
 import upScroll from '../modules/upScroll/upScroll';
+import addAnimationToMap from '../modules/map/animationMap';
 
 // import deviceInfo from 'current-device';
 // import { lenis } from './modules/scroll/leniscroll';
@@ -16,5 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
         '[answer-list__item-icon]',
     );
     upScroll();
-    googleMap();
+    addAnimationToMap('.home-screen10-container svg g');
 });
