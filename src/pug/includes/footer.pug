@@ -2,25 +2,25 @@
     var menu = [
         {
             title: 'Про комплекс',
-            link: '#',
+            link: '#about-complex',
         },
         {
             title: 'Наши преимущества',
-            link: '#',
+            link: '#benefits',
         },
         {
             title: 'Галерея',
-            link: '#',
+            link: '#gallery',
         },
         {
             title: 'Планировки',
-            link: '#',
+            link: '#plans',
         },
         {
             title: 'Контакти',
-            link: '#',
+            link: '#contacts',
         },
-    ];
+    ]
 
 footer.footer
     .footer-row
@@ -28,8 +28,8 @@ footer.footer
         nav
             ul.header-menu
                 each item in menu
-                    li 
-                        a(href= item.link data-title= item.title).header-menu__link.text-style-1920-nav.color-graphite= item.title
+                    li(scroll-up-arrow)
+                        button(data-title= item.title data-id= item.link).header-menu__link.text-style-1920-nav.color-graphite= item.title
         .footer-info
             a(href="tel:380957211420") + 38 095 721 14 20
             a(href="https://smarto.agency" target="_blank").dev-logo

@@ -8,7 +8,6 @@
     transition: transform 0.3s ease;
 
     &-row {
-        // @include tFlex();
         display: flex;
         align-items: center;
         gap: 10px;
@@ -35,14 +34,16 @@
         @include to(1380px) {
             gap: 20px;
         }
-        a {
-            position: relative;
-            overflow: hidden;
-            color: transparent;
+
+        button {
             display: block;
+            position: relative;
+            @include adaptive-font(18, 14, 1880);
+            color: transparent;
+            overflow: hidden;
         }
 
-        a::before {
+        button::before {
             content: attr(data-title);
             position: absolute;
             left: 0;
@@ -54,15 +55,15 @@
             transform: none;
         }
 
-        a:hover:before {
+        button:hover:before {
             transform: translateY(100%);
         }
 
-        a:hover:after {
+        button:hover:after {
             transform: translateY(2px);
         }
 
-        a:after {
+        button:after {
             content: attr(data-title);
             position: absolute;
             left: 0;

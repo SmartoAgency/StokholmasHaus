@@ -1,45 +1,56 @@
-import markersFromPrevSite from "./markersFromPrevSite";
+import markersFromPrevSite from './markersFromPrevSite';
 
-const baseFolder = window.location.href.match(/localhost/) 
-? './assets/images/markers/'
-: '/wp-content/themes/rams/assets/images/markers/';
+const baseFolder =
+    document.documentElement.dataset.status === 'local'
+        ? './assets/images/markers/'
+        : '/wp-content/themes/3d/assets/images/markers/';
 
 const markersAdresses = {
     main: `${baseFolder}main.svg`,
-    office: `${baseFolder}office.svg`,
-    hotel: `${baseFolder}hotel.svg`,
-    shop: `${baseFolder}shop.svg`,
-    park: `${baseFolder}park.svg`,
-    school: `${baseFolder}school.svg`,
-    education: `${baseFolder}education.svg`,
+    church: `${baseFolder}church.svg`,
+    court: `${baseFolder}court.svg`,
+    golf: `${baseFolder}gold.svg`,
+    kindergarten: `${baseFolder}kindergarten.svg`,
     medicine: `${baseFolder}medicine.svg`,
-    market: `${baseFolder}market.svg`,
-    transport: `${baseFolder}transport.svg`,
-    ramsbeyondistanbul: `${baseFolder}ramsbeyondistanbul.svg`,
-    ramscity: `${baseFolder}ramscity.svg`,
-    quattro: `${baseFolder}quattro.svg`,
-    bayramoglu: `${baseFolder}bayramoglu.svg`,
-  };
+    narvessen: `${baseFolder}narvessen.svg`,
+    park: `${baseFolder}park.svg`,
+    pool: `${baseFolder}pool.svg`,
+    zoo: `${baseFolder}zoo.svg`,
+    shop: `${baseFolder}shop.svg`,
+};
 
 const markerPopupStyle = `
 style="
-background: #ffffff;
-color:#000000;
-font-weight: bold;
+height: 100%;
+width: 100%;
+text-align: center;
+background: #ECEBE9;
+color:#424242;
 padding:5px 10px;
 font-size: 16px;
 line-height: 120%;"
 `;
 
 export async function fetchMarkersData(google) {
-
-    
-    const buildLogoSize = new google.maps.Size(125, 55);
+    const sizes = {
+        main: new google.maps.Size(307, 88),
+        link: new google.maps.Size(240, 58),
+        park: new google.maps.Size(227, 120),
+        kindergarten: new google.maps.Size(150, 120),
+    };
+    const anchors = {
+        main: new google.maps.Point(0, 70), // Центр иконки (28, 28) для 56x56
+        church: new google.maps.Point(20, 20),
+        court: new google.maps.Point(20, 20),
+        park: new google.maps.Point(123, 0),
+        kindergarten: new google.maps.Point(85, 110),
+        // Добавьте для остальных маркеров аналогичные значения
+    };
     const sendData = new FormData();
     sendData.append('action', 'infrastructure');
     const url = window.location.href.match(/localhost/)
-      ? 'https://central-park-wp.smarto.com.ua/wp-admin/admin-ajax.php'
-      : '/wp-admin/admin-ajax.php'
+        ? 'https://central-park-wp.smarto.com.ua/wp-admin/admin-ajax.php'
+        : '/wp-admin/admin-ajax.php';
     // let markersData = window.location.href.match(/localhost|smarto/) ? Promise.resolve(mockData()) : await fetch(url, {
     //   method: 'POST',
     //   body: sendData,
@@ -48,109 +59,184 @@ export async function fetchMarkersData(google) {
     // markersData = window.location.href.match(/localhost|smarto/) ? mockData() : await markersData.json();
     markersData = mockData();
     if (!markersData) {
-      console.warn('Wrong data recieved');
-      return;
-    };
+        console.warn('Wrong data recieved');
+        return;
+    }
 
     let formatedMarkersDataForMap = markersData.reduce((acc, el) => {
-      if (!el.list) return acc;
-      el.list.forEach(marker => {
-        acc.push({
-          content: `<div ${markerPopupStyle}>${marker.name}</div>`,
-          position: { 
-            lat: marker.coordinations.latitude, 
-            lng: marker.coordinations.elevation 
-          },
-          type: el.code,
-          id: marker.id,
-          zIndex: 2,
-          icon: { url: markersAdresses[el.code], scaledSize: buildLogoSize }
+        if (!el.list) return acc;
+        el.list.forEach(marker => {
+            console.log('marker!!!!!!!!!!!!');
+            const { category, id } = marker;
+            console.log('category: ', category);
+            console.log('id: ', id);
+            console.log('markersAdresses[el.code] ', markersAdresses[el.code]);
+            acc.push({
+                content: `<div ${markerPopupStyle}>${marker.name}</div>`,
+                position: {
+                    lat: marker.coordinations.latitude,
+                    lng: marker.coordinations.longitude,
+                },
+                type: el.code,
+                id: marker.id,
+                zIndex: 2,
+                icon: {
+                    url: markersAdresses[el.code],
+                    scaledSize: sizes[el.code],
+                    anchor: anchors[el.code],
+                },
+            });
         });
-      });
-      return acc;
+        return acc;
     }, []);
-
 
     console.log(formatedMarkersDataForMap);
 
     markersFromPrevSite().forEach(marker => {
         formatedMarkersDataForMap.push({
             content: marker.description,
-            position: { 
-              lat: marker.lat, 
-              lng: marker.lng 
+            position: {
+                lat: marker.lat,
+                lng: marker.lng,
             },
             type: marker.category,
             id: marker.id,
             zIndex: 1,
-            icon: { url: markersAdresses[marker.category], scaledSize: buildLogoSize }
-          })
-    })
+            icon: { url: markersAdresses[marker.category], scaledSize: buildLogoSize },
+        });
+    });
 
     return formatedMarkersDataForMap;
 }
 
-
-
 function mockData() {
     return [
-        // {
-        //     "name": "RAMS City Haliç",
-        //     "code": "ramscity",
-        //     "list": [
-        //         {
-        //             "name": "RAMS City Haliç",
-        //             "id": "12312312",
-        //             "coordinations": {
-        //                 "latitude": "41.0334469",
-        //                 "elevation": "28.9212694"
-        //             }
-        //         }
-        //     ]
-        // },
-        // {
-        //     "name": "RAMS BEYOND İSTANBUL",
-        //     "code": "ramsbeyondistanbul",
-        //     "list": [
-        //         {
-        //             "name": "RAMS BEYOND İSTANBUL",
-        //             "id": "12312312",
-        //             "coordinations": {
-        //                 "latitude": "41.109657",
-        //                 "elevation": "29.023951"
-        //             }
-        //         }
-        //     ]
-        // },
         {
-            "name": "Rams Garden Bahçelievler",
-            "code": "main",
-            "list": [
+            name: 'Stokholmas 26',
+            code: 'main',
+            list: [
                 {
-                    "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' target='_blank' href='https://ramsgarden.com/'>Rams Garden Bahçelievler</a>",
-                    "id": "00",
-                    "coordinations": {
-                        "latitude": "41.0074626",
-                        "elevation": "28.8806902"
-                    }
-                }
-            ]
+                    name:
+                        "<a style='display: flex; padding: 20px; flex-direction: column; align-items: flex-end; gap: 10px;width: 100%; height: 100%;' href='#'>Stokholmas 26</a>",
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.000598932864904,
+                        longitude: 24.162005804789086,
+                    },
+                },
+            ],
         },
         {
-            "name": "Rams Türkiye",
-            "code": "office",
-            "list": [
+            name: 'court',
+            code: 'court',
+            list: [
                 {
-                    "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>Rams Türkiye</a>",
-                    "id": "10",
-                    "coordinations": {
-                        "latitude": "40.997902",
-                        "elevation": "29.098045"
-                    }
-                }
-            ]
-        }
-    ]
+                    name: 'Court',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.0043142,
+                        longitude: 24.166839216,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'Kindergarten',
+            code: 'kindergarten',
+            list: [
+                {
+                    name: 'Kindergarten',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.002172783686106,
+                        longitude: 24.16481920715561,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'Medicine',
+            code: 'medicine',
+            list: [
+                {
+                    name: 'Medicine',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.0007506,
+                        longitude: 24.157361118,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'Narvessen',
+            code: 'narvessen',
+            list: [
+                {
+                    name: 'Narvessen',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.0047546,
+                        longitude: 24.157188819,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'Park',
+            code: 'park',
+            list: [
+                {
+                    name: 'Cycle path mezhapark',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.00503039943158,
+                        longitude: 24.17984959244774,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'Pool',
+            code: 'pool',
+            list: [
+                {
+                    name: 'Pool',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.0031926,
+                        longitude: 24.17090041692,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'Shop',
+            code: 'shop',
+            list: [
+                {
+                    name: 'Shop',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.0007724,
+                        longitude: 24.157348318,
+                    },
+                },
+            ],
+        },
+        {
+            name: 'zoo',
+            code: 'zoo',
+            list: [
+                {
+                    name: 'Zoo',
+                    id: '00',
+                    coordinations: {
+                        latitude: 57.0047908,
+                        longitude: 24.1578988,
+                    },
+                },
+            ],
+        },
+    ];
 }
-
-

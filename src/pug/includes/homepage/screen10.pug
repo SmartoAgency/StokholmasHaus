@@ -1,7 +1,10 @@
-section.home-screen10.screen-home
+section#contacts.home-screen10.screen-home
     .home-screen10-row
-        .home-screen10-title.container-fix
+        .home-screen10-title.container
             include ../homePageElements/home-screen10-element.pug
             h2 Расположениe
             span которое восхищает
-        +img('home/home-page-screen10.jpg').container
+        .container.home-screen10-map.location-map-container(data-location-container="auto")
+            +svg('map-sprite')
+            //- #map
+            //-     .map
