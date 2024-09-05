@@ -1,33 +1,54 @@
 const addAnimationToMap = selector => {
     const badges = document.querySelectorAll(selector);
-    console.log(badges);
-    badges[0].style.cssText = 'cursor: pointer';
 
-    badges.forEach((badge, index) => {
+    badges.forEach((badge, i) => {
         const firstCircleInBadge = badge.querySelector('circle:first-of-type');
-        index === 0
-            ? (addAnimationToCircle(firstCircleInBadge, 50), openMapInNewTab(badge))
-            : addAnimationToCircle(firstCircleInBadge);
+
+        i === 0
+            ? (addAnimationToCircle(firstCircleInBadge, i, 60), openMapInNewTab(badge))
+            : addAnimationToCircle(firstCircleInBadge, i);
     });
-    function addAnimationToCircle(circle, strokeWidthInEndAnimation = 30) {
-        circle.animate(
+
+    function addAnimationToCircle(circle, index, circleRadius = 30) {
+        const circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+
+        const circlePositionY = circle.getAttribute('cy');
+        const circlePositionX = circle.getAttribute('cx');
+        const circlePositionFill = circle.getAttribute('fill');
+
+        circleElement.setAttributeNS(null, 'cy', circlePositionY);
+        circleElement.setAttributeNS(null, 'cx', circlePositionX);
+        circleElement.setAttributeNS(null, 'r', 0);
+        circleElement.setAttributeNS(null, 'fill', circlePositionFill);
+
+        circleElement.animate(
             [
-                {
-                    r: 0,
-                    stroke: 'rgba(0, 0, 0, 0.1)',
-                    opacity: 1,
-                },
-                {
-                    r: strokeWidthInEndAnimation,
-                    stroke: 'rgba(0, 0, 0, 0.1)',
-                    opacity: 0,
-                },
+                { opacity: 1, r: 10 },
+                { opacity: 0, r: circleRadius },
             ],
             {
                 duration: 2000,
                 iterations: Infinity,
             },
         );
+        function startAnimation(isTrue) {
+            const animation = circleElement.animate(
+                [
+                    { opacity: 1, r: 0 },
+                    { opacity: 0, r: circleRadius },
+                ],
+                {
+                    duration: 2000,
+                    iterations: 1,
+                },
+            );
+            animation.onfinish = () => {
+                setTimeout(startAnimation, isTrue ? 2000 : 3000);
+            };
+        }
+
+        startAnimation(index % 2 === 0);
+        circle.insertAdjacentElement('beforebegin', circleElement);
     }
 
     function openMapInNewTab(trigger) {

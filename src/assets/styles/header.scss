@@ -105,7 +105,7 @@
         // transform: translateY(10%);
     }
     &.headroom--not-top {
-        background-color: transparentize($wc, 0.2);
+        background-color: $wc;
     }
 
     &.headroom--pinned,
