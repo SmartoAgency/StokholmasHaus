@@ -764,8 +764,8 @@
                         transition: background-color 0.3s ease;
                         &:hover {
                             color: $wc;
-                            background-color: transparentize($mc2, 0.7);
-                            border-color: $mc2;
+                            background-color: transparentize($mc3, 0.4);
+                            border-color: $mc3;
                         }
                     }
                 }
@@ -858,6 +858,7 @@
             border-color: $mc3;
         }
         &__active {
+            // background-color: transparentize(#c5c1bd, 0.7) !important;
             border-color: $mc3;
         }
     }

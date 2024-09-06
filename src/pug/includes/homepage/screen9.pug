@@ -25,7 +25,7 @@ section#gallery.home-screen9.screen-home
         .home-screen9-text
             h2.home-screen-title Визуальное путешествие по StokholmasHaus26
             p.home-screen-subtitle Погрузитесь в атмосферу элегантности и современного комфорта с нашей галереей изображений StokholmasHaus26. Каждое фото передает уникальную эстетику и изысканность нашего комплекса, отражая гармонию архитектурных решений и природного окружения.
-        ul.home-screen8-buttons
+        ul.home-screen8-buttons(container-button-visual)
             each apartment in apartments
                 li.home-screen8-buttons__item
                     button(value= apartment.value).label-button= apartment.title

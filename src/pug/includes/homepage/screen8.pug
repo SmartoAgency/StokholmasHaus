@@ -16,12 +16,12 @@
 
 section#plans.home-screen8
     .home-screen8-row.container
-        ul.home-screen8-buttons
+        ul.home-screen8-buttons(container-button-scheme)
             each apartment in apartments
                 li.home-screen8-buttons__item
                     button(value= apartment.value).label-button= apartment.title
-        .home-screen8-apartment
-            .apartment-info
+        .home-screen8-apartment(data-apartment-info)
+            .apartment-info(data-apartment-info-table)
                 table
                     thead
                         tr
@@ -43,21 +43,21 @@ section#plans.home-screen8
                         tr 
                             td Детская комната:
                             td 16.2 м2
-            .apartment-scheme
+            .apartment-scheme(data-apartment-scheme)
                 +img('home/home-screen8-scheme.png')
             .apartment-level
                 h3 Етаж
-                .apartment-level-buttons
-                    button 1
-                    button.apartment-level-btn__active 2 
+                .apartment-level-buttons(data-level-buttons)
+                    button(value=1) 1
+                    button(value=2).apartment-level-btn__active 2 
     .home-screen8-img
         .home-screen8-img__badge-one
             include ../homePageElements/pin.pug
             +badge('Stokholmas 26 A')
         +img('home/home-page-screen8.png')
     .home-screen8-row.container
-        .home-screen8-apartment
-            .apartment-info
+        .home-screen8-apartment(data-apartment-info)
+            .apartment-info(data-apartment-info-table)
                 table
                     thead
                         tr
@@ -79,11 +79,11 @@ section#plans.home-screen8
                         tr 
                             td Детская комната:
                             td 16.2 м2
-            .apartment-scheme
+            .apartment-scheme(data-apartment-scheme)
                 +img('home/home-screen8-scheme__1.png')
             .apartment-level
                 h3 Етаж
-                .apartment-level-buttons
-                    button 1
-                    button.apartment-level-btn__active 2 
+                .apartment-level-buttons(data-level-buttons)
+                    button(value=1) 1
+                    button(value=2).apartment-level-btn__active 2 
 
