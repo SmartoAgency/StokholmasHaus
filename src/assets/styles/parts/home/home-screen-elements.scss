@@ -309,3 +309,19 @@
         background: $mc;
     }
 }
+
+.main-map-animation {
+    rect,
+    path:nth-child(3) {
+        transition: fill 0.3s ease;
+    }
+    &:hover {
+        cursor: pointer;
+        rect {
+            fill: transparentize($mc3, 0.2);
+        }
+        path:nth-child(3) {
+            fill: transparentize($mc3, 0.2);
+        }
+    }
+}

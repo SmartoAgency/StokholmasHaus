@@ -4,7 +4,10 @@ const addAnimationToMap = selector => {
     const badges = document.querySelectorAll(selector);
     badges.forEach((badge, i) => {
         badge.classList.add('circle-animation');
-        if (i === 0) openMapInNewTab(badge);
+        if (i === 0) {
+            badge.parentElement.classList.add('main-map-animation');
+            openMapInNewTab(badge.parentElement);
+        }
     });
 
     gsap.to('.circle-animation', {

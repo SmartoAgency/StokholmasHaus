@@ -15,7 +15,6 @@ const getFloorScheme = containerSelector => {
     });
 
     function toggleStyleOnButton(trigger) {
-        console.log('trigger'.toUpperCase(), trigger);
         const $buttons = Array.from(trigger.parentElement.getElementsByTagName('button'));
 
         $buttons.forEach(button => button.classList.remove('apartment-level-btn__active'));
@@ -58,13 +57,13 @@ const getFloorScheme = containerSelector => {
             `;
         } else {
         }
-        console.log('apartmentInfoContainers: ');
-        console.log($apartmentInfoContainers[index]);
+        // console.log('apartmentInfoContainers: ');
+        // console.log($apartmentInfoContainers[index]);
     }
 
     function getSchemeInfo(value, index) {
-        console.log('apartmentSchemeContainers');
-        console.log($apartmentSchemeContainers[index]);
+        // console.log('apartmentSchemeContainers');
+        // console.log($apartmentSchemeContainers[index]);
     }
 };
 
