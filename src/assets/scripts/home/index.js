@@ -1,5 +1,4 @@
-import './animation';
-
+import frontAnimation from './animation';
 import accordion from '../modules/accordion';
 import upScroll from '../modules/upScroll/upScroll';
 import addAnimationToMap from '../modules/map/animationMap';
@@ -12,6 +11,7 @@ import getFloorScheme from '../modules/getFloorScheme/getFloorScheme';
 // const scroller = lenis;
 
 document.addEventListener('DOMContentLoaded', () => {
+    frontAnimation();
     accordion(
         '.answer-list__item',
         '[answer-item__answer]',
