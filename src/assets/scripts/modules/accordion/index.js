@@ -17,7 +17,7 @@ const accordion = (triggerSelectors, textSelector, labelSelector, iconSelector) 
                     marginBottom: 0,
                 },
                 {
-                    marginBottom: 40,
+                    marginBottom: '2vw',
                     opacity: 1,
                     height: 'auto',
                     duration: 0.35,

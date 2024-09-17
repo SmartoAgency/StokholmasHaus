@@ -28,6 +28,7 @@ section#gallery.home-screen9.screen-home
         ul.home-screen8-buttons(container-button-visual)
             each apartment in apartments
                 li.home-screen8-buttons__item
-                    button(value= apartment.value).label-button= apartment.title
+                    button(value= apartment.value).label-button
+                        span.button-item__desktop= apartment.title
         .home-screen8-img 
             +img('home/home-page-screen9.jpg')

@@ -1,5 +1,7 @@
-import frontAnimation from './animation';
+import './animation';
+
 import accordion from '../modules/accordion';
+import menu from '../modules/menu';
 import upScroll from '../modules/upScroll/upScroll';
 import addAnimationToMap from '../modules/map/animationMap';
 import getApartmentScheme from '../modules/getApartmentScheme/getApartmentScheme';
@@ -11,7 +13,6 @@ import getFloorScheme from '../modules/getFloorScheme/getFloorScheme';
 // const scroller = lenis;
 
 document.addEventListener('DOMContentLoaded', () => {
-    frontAnimation();
     accordion(
         '.answer-list__item',
         '[answer-item__answer]',
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '[answer-list__item-icon]',
     );
     upScroll();
+    menu();
     addAnimationToMap('.home-screen10-container svg g circle:first-of-type');
     getApartmentScheme('[container-button-scheme]');
     getFloorScheme('[data-apartment-info]');

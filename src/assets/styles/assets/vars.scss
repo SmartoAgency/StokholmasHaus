@@ -52,7 +52,7 @@ $gold: #cfa46e;
 }
 @media screen and (max-width: 1240px) {
     :root {
-        --page-side-fields: 20px;
+        --page-side-fields: 30px;
     }
 }
 
@@ -61,7 +61,7 @@ $gold: #cfa46e;
         --header-h: 110px;
         --logo-w: 90px;
         --sliceFigure-big: 44px;
-        --page-side-fields: 10px;
+        --page-side-fields: 26px;
     }
 }
 @media screen and (max-width: 576px) {
@@ -74,7 +74,7 @@ $gold: #cfa46e;
 }
 
 .tablet {
-    --page-side-fields: 20px;
+    --page-side-fields: 24px;
     --section-v-offset: 50px;
     --header-h: 80px;
     .page__inner {
@@ -84,7 +84,7 @@ $gold: #cfa46e;
 }
 
 .mobile {
-    --page-side-fields: 10px;
+    --page-side-fields: 12px;
     --section-v-offset: 50px;
     --header-h: 55px;
     .page__inner {

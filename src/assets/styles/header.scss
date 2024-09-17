@@ -6,17 +6,31 @@
     padding: 38px 0 48px 0;
     color: $mc;
     transition: transform 0.3s ease;
+    @include to(768px) {
+        padding: 20px 0;
+    }
+
+    @include to(1200px) {
+        padding: 25px 0;
+    }
 
     &-row {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 10px;
         color: inherit;
+        z-index: 99;
+        @include to(768px) {
+            display: none;
+        }
     }
 
     &-logo {
         font-size: 24px;
-        @include adaptive-font(24, 14, 1880);
+        @include to(1200px) {
+            @include adaptive-font(24, 18, 1200);
+        }
     }
 
     nav {
@@ -33,6 +47,9 @@
         white-space: nowrap;
         @include to(1380px) {
             gap: 20px;
+        }
+        @include to(1200px) {
+            display: none;
         }
 
         button {
@@ -79,18 +96,43 @@
 
     &-info {
         @include tFlex();
-        @include adaptive-font(18, 14, 1880);
         gap: 20px;
         margin-left: adaptive-size-width(136);
+        font: 500 18px/100% $default-font2, sans-serif;
+        @include adaptive-font(18, 14, 1880);
         @media (max-width: 1500px) {
             margin-left: adaptive-size-width(86);
         }
         @media (max-width: 1300px) {
             margin-left: adaptive-size-width(23);
         }
-        font: 500 18px/100% $default-font2, sans-serif;
         @include to(1380px) {
             gap: 10px;
+        }
+        @include to(1200px) {
+            gap: 16px;
+        }
+    }
+
+    &-menu-button {
+        display: none;
+        margin-left: adaptive-size-width(50);
+        gap: 11px;
+        transition: opacity 0.3s ease;
+        &:hover {
+            opacity: 0.9;
+        }
+        &__text {
+            font-family: $default-font2;
+            @include adaptive-font(18, 16);
+            font-weight: 500;
+            line-height: 1;
+        }
+        &__icon {
+            @include tFlex();
+        }
+        @include to(1200px) {
+            @include tFlex();
         }
     }
 
@@ -100,6 +142,28 @@
 }
 
 .header {
+    &-important--pin {
+        color: $wc !important;
+        background-color: $mc !important;
+        transform: translateY(0) !important;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        .sl-nav {
+            .fa .fa-angle-down {
+                fill: $wc !important;
+            }
+            ul {
+                li {
+                    color: $mc;
+                    svg path {
+                        fill: $wc !important;
+                    }
+                }
+                b {
+                    color: $wc !important;
+                }
+            }
+        }
+    }
     &.headroom--top {
         // background-color: transparent !important;
         // transform: translateY(10%);
@@ -142,6 +206,31 @@
     }
 }
 
+.header-not-desktop {
+    display: none;
+    @include to(768px) {
+        @include tFlex();
+        .header-menu-button {
+            margin-left: 0;
+        }
+    }
+    &__list {
+        @include tFlex();
+        gap: 12px;
+    }
+    &__list-item {
+        @include tFlex(center, center);
+        height: 42px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        &:hover {
+            opacity: 0.9;
+        }
+        a {
+            height: 100%;
+        }
+    }
+}
 // .header {
 //   position: fixed;
 //   left: 0;

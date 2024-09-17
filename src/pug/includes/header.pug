@@ -49,3 +49,59 @@ header(class="header "+header_class)
                                         a.active Lv
                                     li
                                         a En
+                button.header-menu-button(data-menu-call)
+                    span.header-menu-button__text Меню
+                    span.header-menu-button__icon
+                        <svg class="header-menu-button__icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4.5" width="18" height="2" fill="#424242"/>
+                            <rect x="7" y="10.5" width="14" height="2" fill="#424242"/>
+                            <rect x="3" y="16.5" width="18" height="2" fill="#424242"/>
+                        </svg>
+                        <svg class="header-menu-button__icon-close none" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.928955" y="13.0859" width="18" height="2" transform="rotate(-45 0.928955 13.0859)" fill="white"/>
+                            <rect x="2.34326" y="0.5" width="18" height="2" transform="rotate(45 2.34326 0.5)" fill="white"/>
+                        </svg>
+
+
+        .header-not-desktop
+            a(href="/").header-logo StokholmasHAUS 26
+            ul.header-not-desktop__list
+                li.header-not-desktop__list-item
+                    a(class="header-not-desktop__callback" href="tel:+380957211420")
+                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="42" height="42" rx="4" fill="#D47E27"/>
+                            <path d="M31.9993 26.4712V29.7831C32.0006 30.0906 31.9375 30.3949 31.814 30.6766C31.6906 30.9583 31.5096 31.2112 31.2826 31.419C31.0556 31.6269 30.7876 31.7851 30.4958 31.8836C30.2039 31.9821 29.8947 32.0187 29.5879 31.991C26.1841 31.6219 22.9145 30.4611 20.0418 28.6019C17.3691 26.9069 15.1032 24.6455 13.4049 21.9781C11.5354 19.0981 10.3721 15.8191 10.009 12.4067C9.98134 12.1015 10.0177 11.7938 10.1157 11.5033C10.2138 11.2128 10.3713 10.9459 10.5784 10.7195C10.7855 10.4931 11.0375 10.3122 11.3184 10.1884C11.5994 10.0645 11.9031 10.0004 12.2102 10.0001H15.5287C16.0655 9.99483 16.5859 10.1846 16.993 10.5339C17.4 10.8833 17.6659 11.3684 17.741 11.8989C17.8811 12.9588 18.1408 13.9995 18.5153 15.0011C18.6641 15.3962 18.6963 15.8256 18.6081 16.2385C18.5199 16.6513 18.3149 17.0303 18.0175 17.3304L16.6127 18.7324C18.1874 21.4963 20.4803 23.7847 23.2496 25.3562L24.6545 23.9542C24.9552 23.6574 25.3349 23.4528 25.7486 23.3648C26.1622 23.2767 26.5925 23.3089 26.9884 23.4574C27.992 23.8312 29.0348 24.0904 30.0967 24.2302C30.6341 24.3058 31.1248 24.576 31.4756 24.9892C31.8264 25.4024 32.0128 25.9298 31.9993 26.4712Z" stroke="white" stroke-width="1.71429" stroke-linecap="round"/>
+                        </svg>
+                li.header-not-desktop__list-item
+                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="42" height="42" rx="4" fill="#D47E27"/>
+                        <path d="M22.12 19.8798H18.76M18.76 19.8798V17.6398M18.76 19.8798V26.5998H14.28M18.76 9.7998H9.79999V26.5998H14.28M18.76 9.7998V13.1598M18.76 9.7998H32.2V19.8798H29.4M26.6 19.8798H29.4M29.4 19.8798V32.1998H14.28V26.5998" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                li.header-not-desktop__list-item
+                    .sl-nav
+                        ul
+                            li
+                                b Ru
+                                <svg class="fa fa-angle-down" width="24" height="24" viewBox="0 0 24 24"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10L12 15L17 10H7Z" fill="#28282A"/>
+                                </svg>
+
+                                .triangle
+                                ul
+                                    li
+                                        a.active Lv
+                                    li
+                                        a En
+                li.header-not-desktop__list-item
+                    button.header-menu-button.header-not-desktop__button(data-menu-call data-menu-open='false')          
+                        <svg class="header-not-desktop__menu header-menu-button__icon-open" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="42" height="42" rx="4" fill="#D47E27"/>
+                            <rect x="12" y="13.5" width="18" height="2" fill="white"/>
+                            <rect x="16" y="19.5" width="14" height="2" fill="white"/>
+                            <rect x="12" y="25.5" width="18" height="2" fill="white"/>
+                        </svg>
+                        <svg class="header-not-desktop__menu header-menu-button__icon-close none" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="42" height="42" rx="4" fill="#D47E27"/>
+                            <rect x="13.929" y="26.0859" width="18" height="2" transform="rotate(-45 13.929 26.0859)" fill="white"/>
+                            <rect x="15.3431" y="13.5" width="18" height="2" transform="rotate(45 15.3431 13.5)" fill="white"/>
+                        </svg>

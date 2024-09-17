@@ -26,6 +26,10 @@
     margin: 0 auto;
 }
 
+.none {
+    display: none;
+}
+
 .main-button {
     border-radius: 4px;
     background-color: $mc3;
@@ -66,21 +70,22 @@
     position: relative;
     z-index: 3;
     font: 350 80px/1 $default-font;
-    @include adaptive-font(80, 32);
+    @include adaptive-font(80, 42);
     color: $mc;
+
     @media (max-width: 900px) {
         max-width: 100% !important;
         margin-bottom: 2vw !important;
-        text-align: center;
+        text-align: left;
     }
 }
 
 .home-screen-subtitle {
     font: 300 18px/1.4 $default-font2;
-    @include adaptive-font(18, 14);
+    @include adaptive-font(18, 16);
     color: $mc5;
 
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
         max-width: 100% !important;
     }
 }
