@@ -1,6 +1,8 @@
 .footer {
-    padding-left: var(--page-side-fields);
-    padding-right: var(--page-side-fields);
+    padding-left: adaptive-size-width(40);
+    padding-right: adaptive-size-width(40);
+    // padding-left: var(--page-side-fields);
+    // padding-right: var(--page-side-fields);
     padding-top: adaptive-size-width(80);
     &-row {
         @extend .header-row;

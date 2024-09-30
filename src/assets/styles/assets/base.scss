@@ -41,6 +41,9 @@
     &:hover {
         background-color: transparentize($mc3, 0.2);
     }
+    @media (min-width: 1921px) {
+        @include adaptive-font(24, 18, 1880);
+    }
 }
 
 .main-image-decor {
@@ -84,6 +87,10 @@
     font: 300 18px/1.4 $default-font2;
     @include adaptive-font(18, 16);
     color: $mc5;
+
+    @media (min-width: 1921px) {
+        @include adaptive-font(26, 16, 1880);
+    }
 
     @media (max-width: 768px) {
         max-width: 100% !important;

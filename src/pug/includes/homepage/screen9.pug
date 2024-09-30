@@ -3,6 +3,8 @@
         {
             name: "apartment-button",
             title: "Stokholmas 26",
+            mobileTitle: "26",
+            mobileClass: 'button-item__mobile',
             value: 3,
             id: "stokholmas-26__1",
         },
@@ -10,11 +12,15 @@
             name: "apartment-button",
             title: "Stokholmas 26 c",
             value: 4,
+            mobileTitle: "26 c",
+            mobileClass: 'button-item__mobile',
             id: "stokholmas-26_c__2",
         },
         {
             name: "apartment-button",
             title: "Stokholmas 26 A",
+            mobileTitle: "26 A",
+            mobileClass: 'button-item__mobile',
             value: 5,
             id: "stokholmas-26_a",
         },
@@ -30,5 +36,7 @@ section#gallery.home-screen9.screen-home
                 li.home-screen8-buttons__item
                     button(value= apartment.value).label-button
                         span.button-item__desktop= apartment.title
+                        span(class= apartment['mobileClass'])= apartment.mobileTitle
+
         .home-screen8-img 
             +img('home/home-page-screen9.jpg')

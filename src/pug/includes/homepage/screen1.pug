@@ -1,17 +1,29 @@
 section.home-screen1
-    .home-screen1-row.container-fix
+    .home-screen1-row
         .home-screen1-rectangle
-        h1.home-screen1-row-title__left
-            span S
-            | tokholmas
-        .home-screen1-row-title__right
-            div
-                span Ba
-                span u
-                    span Ba<b>u</b>haus
-                span haus
+        .home-screen1-rectangle-decor__line
+        .home-screen1-row-title__left.title-left
+            h1
+                span
+                    span.title-left__first-letter S
+                    | tokholmas
+                span.title-left__subtitle
+                    span Ba
+                    span u
+                        span <b>B</b>a<b>u</b>haus
+        .home-screen1-row-title__right.title-right
+            .title-right__inner
+                span.title-right__subtitle haus
                     span.decor-line
-                span 26
+                span.title-right__number 26
             p Место, в котором хранится история и зарождается новая жизнь, преображая прошлое в настоящее
+                //- div
+                //-     span Ba
+                //-     span u
+                //-         span Ba<b>u</b>haus
+                //-     span haus
+                //-         span.decor-line
+                //-     span 26
+            //- p Место, в котором хранится история и зарождается новая жизнь, преображая прошлое в настоящее
     .main-image-decor
         +img('home/home-page-screen1.png') 

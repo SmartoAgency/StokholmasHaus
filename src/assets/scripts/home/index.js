@@ -6,6 +6,7 @@ import upScroll from '../modules/upScroll/upScroll';
 import addAnimationToMap from '../modules/map/animationMap';
 import getApartmentScheme from '../modules/getApartmentScheme/getApartmentScheme';
 import getFloorScheme from '../modules/getFloorScheme/getFloorScheme';
+import draggableMap from '../modules/draggableMap/draggableMap';
 
 // import deviceInfo from 'current-device';
 // import { lenis } from './modules/scroll/leniscroll';
@@ -22,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     upScroll();
     menu();
     addAnimationToMap('.home-screen10-container svg g circle:first-of-type');
-    getApartmentScheme('[container-button-scheme]');
-    getFloorScheme('[data-apartment-info]');
+    getApartmentScheme('[data-apartment-section]');
+    // Current version
+    // getApartmentScheme('[container-button-scheme]');
+    // getFloorScheme('[data-apartment-info]');
+    draggableMap('.home-screen10-container', '.home-screen10-map', '.main-map-animation');
 });

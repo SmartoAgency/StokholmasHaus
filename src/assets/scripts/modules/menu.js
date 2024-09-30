@@ -85,6 +85,7 @@ function openMenu(menuBtn, animation) {
     document.body.style.overflow = 'hidden';
     animation.progress(0).play();
     document.querySelector('.header').classList.add('header-important--pin');
+    document.querySelector('.header-inner').classList.add('header-menu-open');
 
     toggleButtonIcon();
 }
@@ -94,6 +95,7 @@ function closeMenu(menuBtn, animation) {
         toggleButtonIcon();
         document.body.style.overflow = 'visible';
         document.querySelector('.header').classList.remove('header-important--pin');
+        document.querySelector('.header-inner').classList.remove('header-menu-open');
     }, 500);
     menuBtn.dataset.menuOpen = 'false';
 

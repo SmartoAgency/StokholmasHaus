@@ -93,6 +93,12 @@ $gold: #cfa46e;
     }
 }
 
+.spinner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .spinner {
     margin: adaptive-size-width(56) auto 0;
     width: adaptive-size-width(90);
@@ -102,6 +108,10 @@ $gold: #cfa46e;
         conic-gradient(#0000 30%, #d47e27);
     -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
     animation: spinner 1s infinite linear;
+    @media (max-width: 900px) {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @keyframes spinner {

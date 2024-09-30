@@ -3,15 +3,18 @@
     left: 0;
     right: 0;
     z-index: 3;
-    padding: 38px 0 48px 0;
     color: $mc;
     transition: transform 0.3s ease;
-    @include to(768px) {
-        padding: 20px 0;
-    }
 
-    @include to(1200px) {
-        padding: 25px 0;
+    &-inner {
+        padding: 38px 0 48px 0;
+        @include to(768px) {
+            padding: 20px 0;
+        }
+
+        @include to(1200px) {
+            padding: 25px 0;
+        }
     }
 
     &-row {
@@ -28,6 +31,9 @@
 
     &-logo {
         font-size: 24px;
+        @media (min-width: 1921px) {
+            @include adaptive-font(42, 24, 1880);
+        }
         @include to(1200px) {
             @include adaptive-font(24, 18, 1200);
         }
@@ -45,6 +51,9 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        @media (min-width: 1921px) {
+            gap: adaptive-size-width(40);
+        }
         @include to(1380px) {
             gap: 20px;
         }
@@ -58,6 +67,9 @@
             @include adaptive-font(18, 14, 1880);
             color: transparent;
             overflow: hidden;
+            @media (min-width: 1921px) {
+                @include adaptive-font(24, 14, 1880);
+            }
         }
 
         button::before {
@@ -100,6 +112,10 @@
         margin-left: adaptive-size-width(136);
         font: 500 18px/100% $default-font2, sans-serif;
         @include adaptive-font(18, 14, 1880);
+        @media (min-width: 1921px) {
+            @include adaptive-font(24, 18, 1880);
+            gap: adaptive-size-width(20);
+        }
         @media (max-width: 1500px) {
             margin-left: adaptive-size-width(86);
         }
@@ -138,6 +154,9 @@
 
     .main-button {
         padding: 18px;
+        @media (min-width: 1921px) {
+            padding: adaptive-size-width(12) adaptive-size-width(18);
+        }
     }
 }
 
@@ -146,7 +165,6 @@
         color: $wc !important;
         background-color: $mc !important;
         transform: translateY(0) !important;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
         .sl-nav {
             .fa .fa-angle-down {
                 fill: $wc !important;
@@ -204,6 +222,10 @@
     &.headroom--unpinned:after {
         pointer-events: all;
     }
+}
+
+.header-menu-open {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-not-desktop {

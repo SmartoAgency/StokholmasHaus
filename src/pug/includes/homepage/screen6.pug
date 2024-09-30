@@ -4,7 +4,11 @@ section.home-screen6.screen-home
             h2.home-screen-title Виртуальный 3D-тур: выберите квартиру своей мечты
             p.home-screen-subtitle Исследуйте наш жилой комплекс в мельчайших деталях! С помощью интерактивного 3D-тура вы можете вращать дом, просматривать его с разных ракурсов, выбирать квартиры и подробно изучать их параметры. Этот удобный инструмент позволяет найти идеальное жилье, не выходя из дома.
         .home-screen6-map
-            +img('home/home-screen9-map.jpg')
+            <picture>
+                <source srcset="./assets/images/home/home-screen9-map-mobile.jpg" media="(max-width: 900px)">
+                img(src="./assets/images/home/home-screen9-map.jpg", alt="")
+            </picture> 
+            //- +img('home/home-screen9-map.jpg')
         .home-screen6-button
             button
                 +svg('home-screen9-icon__btn')
