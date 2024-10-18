@@ -5,12 +5,14 @@
             title: "Stokholmas 26",
             value: "stokholmas-26",
             id: "stokholmas-26",
+            dataBuild: 1,
         },
         {
             name: "apartment-button",
             title: "Stokholmas 26 c",
             value: "stokholmas-26-c",
             id: "stokholmas-26_c",
+            dataBuild: 2,
         },
     ];
 
@@ -19,73 +21,69 @@ section#plans.home-screen8.screen-home(data-apartment-section)
         ul.home-screen8-buttons(container-button-scheme)
             each apartment in apartments
                 li.home-screen8-buttons__item
-                    button(value= apartment.value).label-button= apartment.title
+                    button(value= apartment.value data-build=apartment.dataBuild).label-button= apartment.title
         .home-screen8-apartment(data-apartment-info)
             .apartment-info(data-apartment-info-table)
                 table
                     thead
                         tr
                             td Общая площадь:
-                            td 154.6 м2
+                            td(data-apartment-label="currency") 154.6 м2
                         tr
                             td Количество комнат:
-                            td 4
+                            td(data-apartment-label="all_room") 4
                     tbody
                         tr 
                             td Кухня:
-                            td 32.8 м2
+                            td(data-apartment-label="custom_field_1") 32.8 м2
                         tr 
                             td Ванная комната:
-                            td 12.4 м2
+                            td(data-apartment-label="custom_field_2") 12.4 м2
                         tr 
                             td Спальня:
-                            td 24.9 м2
+                            td(data-apartment-label="custom_field_3") 24.9 м2
                         tr 
                             td Детская комната:
-                            td 16.2 м2
+                            td(data-apartment-label="custom_field_4") 16.2 м2
             .apartment-scheme(data-apartment-scheme)
-                //- +img('home/home-screen8-scheme.png')
-                //- +img('scheme/stokholmas-26.png')
-
             .apartment-level
                 h3 Етаж
                 .apartment-level-buttons(data-level-buttons)
-                    button(value=1 data-apartment-level) 1
-                    button(value=2 data-apartment-level).apartment-level-btn__active 2 
+                    button(value=1 data-apartment-level data-section=1) 1
+                    button(value=2 data-apartment-level data-section=2).apartment-level-btn__active 2 
     .home-screen8-img
         .home-screen8-img__badge-one
             include ../homePageElements/pin.pug
             +badge('Stokholmas 26 A')
         +img('home/home-page-screen8.png')
-    .home-screen8-row.container
-        .home-screen8-apartment(data-apartment-info)
+    .home-screen8-row.container(data-apartment-26-a)
+        .home-screen8-apartment.home-screen8-apartment-next-section(data-apartment-info)
             .apartment-info(data-apartment-info-table)
                 table
                     thead
                         tr
                             td Общая площадь:
-                            td 154.6 м2
+                            td(data-apartment-label="currency") 154.6 м2
                         tr
                             td Количество комнат:
-                            td 4
+                            td(data-apartment-label="all_room") 4
                     tbody
                         tr 
                             td Кухня:
-                            td 32.8 м2
+                            td(data-apartment-label="custom_field_1") 32.8 м2
                         tr 
                             td Ванная комната:
-                            td 12.4 м2
+                            td(data-apartment-label="custom_field_2") 12.4 м2
                         tr 
                             td Спальня:
-                            td 24.9 м2
+                            td(data-apartment-label="custom_field_3") 24.9 м2
                         tr 
                             td Детская комната:
-                            td 16.2 м2
+                            td(data-apartment-label="custom_field_4") 16.2 м2
             .apartment-scheme(data-apartment-scheme)
-                +img('home/home-screen8-scheme__1.png')
             .apartment-level
                 h3 Етаж
                 .apartment-level-buttons(data-level-buttons)
-                    button(value=1 data-apartment-26-a-level data-apartment-level-button="stokholmas-26-a") 1
-                    button(value=2 data-apartment-26-a-level data-apartment-level-button="stokholmas-26-a").apartment-level-btn__active 2 
+                    button(value=1 data-apartment-26-a-level data-apartment-level-button=1 data-build=3 ) 1
+                    button(value=2 data-apartment-26-a-level data-apartment-level-button=2 data-build=3).apartment-level-btn__active 2 
 

@@ -1049,13 +1049,19 @@
             &-info {
                 padding: adaptive-size-width(40);
                 max-width: adaptive-size-width(430);
+                overflow-y: auto;
                 // height: adaptive-size-width(681);
-                @include tFlex(center, center);
+                // @include tFlex(center, center);
                 flex-direction: column;
                 width: 100%;
+                height: adaptive-size-width(681);
                 border: 2px solid rgba(66, 66, 66, 0.2);
                 table {
                     width: 100%;
+                    // Was
+                    // max-height: 600px;
+                    // overflow: hidden;
+                    // overflow-y: scroll;
                     tr {
                         @include tFlex();
                         margin-bottom: adaptive-size-width(20);
@@ -1113,6 +1119,7 @@
             }
             &-scheme {
                 width: adaptive-size-width(900);
+                max-height: 681px;
                 img {
                     width: 100%;
                     height: 100%;
@@ -1124,7 +1131,9 @@
             }
             &-level {
                 @extend .apartment-info;
+                @include tFlex(center, center);
                 flex-direction: column;
+                overflow: hidden;
                 @media (max-width: 768px) {
                     padding: 24px;
                     gap: 8px;
@@ -1350,6 +1359,40 @@
 
     .button-item__mobile {
         display: none;
+    }
+
+    .polygon-flat-scheme {
+        fill: transparent !important;
+        transition: fill 0.3s ease;
+        cursor: pointer;
+        &:hover {
+            fill: transparentize($mc3, 0.7) !important;
+        }
+    }
+
+    .polygon-flat-scheme.active {
+        fill: transparentize($mc3, 0.6) !important;
+        max-height: adaptive-size-width(681);
+    }
+
+    .home-screen8-apartment-next-section {
+        height: adaptive-size-width(381);
+        .apartment-info {
+            height: adaptive-size-width(381) !important;
+        }
+        .apartment-level {
+            overflow: hidden;
+            height: adaptive-size-width(381) !important;
+        }
+        @media (max-width: 768px) {
+            height: auto;
+            .apartment-level {
+                height: 35.46875vw !important;
+            }
+            .apartment-info {
+                height: 35.46875vw !important;
+            }
+        }
     }
 }
 
