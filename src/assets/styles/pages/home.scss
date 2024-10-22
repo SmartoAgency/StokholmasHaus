@@ -827,16 +827,19 @@
         &-map {
             margin-bottom: adaptive-size-width(40);
             max-width: 100%;
-            height: auto;
+            height: 930px;
             overflow: hidden;
+
+            @media (min-width: 1921px) {
+                height: adaptive-size-width(700);
+            }
             @media (max-width: 768px) {
                 max-width: 720px;
-                height: 930px;
             }
             @media (max-width: 500px) {
                 height: 434px;
             }
-            img {
+            iframe {
                 width: 100%;
                 height: 100%;
             }
@@ -1195,6 +1198,22 @@
         &-text {
             @extend .home-screen6-text;
             margin-bottom: adaptive-size-width(50);
+        }
+        &-buttons {
+            @extend .home-screen8-buttons;
+        }
+        &-buttons__item {
+            @extend .home-screen8-buttons__item;
+        }
+        &-img {
+            @extend .home-screen8-img;
+            height: adaptive-size-width(900);
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 

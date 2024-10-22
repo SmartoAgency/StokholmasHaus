@@ -7,6 +7,7 @@
             mobileClass: "button-item__mobile",
             value: "stokholmas-26",
             id: "stokholmas-26__1",
+            img: './assets/images/home/home-page-screen9.jpg',
         },
         {
             name: "apartment-button",
@@ -15,6 +16,7 @@
             mobileTitle: "26 c",
             mobileClass: 'button-item__mobile',
             id: "stokholmas-26_c__2",
+            img: './assets/images/home/flat-1.jpg',
         },
         {
             name: "apartment-button",
@@ -23,6 +25,7 @@
             mobileClass: 'button-item__mobile',
             value: "stokholmas-26-a",
             id: "stokholmas-26_a",
+            img: './assets/images/home/flat-2.jpg',
         },
     ];
 
@@ -31,12 +34,14 @@ section#gallery.home-screen9.screen-home
         .home-screen9-text
             h2.home-screen-title Визуальное путешествие по StokholmasHaus26
             p.home-screen-subtitle Погрузитесь в атмосферу элегантности и современного комфорта с нашей галереей изображений StokholmasHaus26. Каждое фото передает уникальную эстетику и изысканность нашего комплекса, отражая гармонию архитектурных решений и природного окружения.
-        ul.home-screen8-buttons(container-button-visual)
+        ul.home-screen9-buttons(container-button-visual)
             each apartment in apartments
-                li.home-screen8-buttons__item
-                    button(value= apartment.value data-button-photo).label-button
+                li.home-screen9-buttons__item
+                    button(value= apartment.value data-button-image= apartment.img).label-button
                         span.button-item__desktop= apartment.title
                         span(class= apartment['mobileClass'])= apartment.mobileTitle
 
-        .home-screen8-img 
+        .home-screen9-img(data-photo-container)
             +img('home/home-page-screen9.jpg')
+            +img('home/flat-1.jpg')
+            +img('home/flat-2.jpg')

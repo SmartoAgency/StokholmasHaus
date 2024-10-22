@@ -7,6 +7,8 @@ import addAnimationToMap from '../modules/map/animationMap';
 import getApartmentScheme from '../modules/getApartmentScheme/getApartmentScheme';
 import draggableMap from '../modules/draggableMap/draggableMap';
 import getPhotoGallery from '../modules/getPhotoGallery/getPhotoGallery';
+import redirectTo3dModule from '../modules/redirectTo3dModule/redirectTo3dModule';
+import loadIframeOnVisible from '../modules/loadIframeOnVisible/loadIframeOnVisible';
 
 // import deviceInfo from 'current-device';
 // import { lenis } from './modules/scroll/leniscroll';
@@ -25,5 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addAnimationToMap('.home-screen10-container svg g circle:first-of-type');
     getApartmentScheme('[data-apartment-section]');
     draggableMap('.home-screen10-container', '.home-screen10-map', '.main-map-animation');
-    getPhotoGallery('[data-button-photo]');
+    getPhotoGallery('[data-photo-container] > img', '[data-button-image]');
+    redirectTo3dModule('[data-3d-link-btn]');
+    loadIframeOnVisible('.home-screen6-map iframe');
 });

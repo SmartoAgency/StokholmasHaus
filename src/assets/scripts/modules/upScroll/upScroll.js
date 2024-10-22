@@ -7,6 +7,7 @@ export default function upArrow() {
         const target = evt.target.closest('[scroll-up-arrow]');
         if (!target) return;
         const targetId = evt.target.dataset.id;
+        console.log(targetId);
         gsap.to(window, { duration: 2, ease: 'power2', scrollTo: targetId });
     });
 }

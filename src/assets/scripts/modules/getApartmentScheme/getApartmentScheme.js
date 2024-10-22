@@ -71,9 +71,19 @@ const getApartmentScheme = containerSelector => {
                 'apartment-level-btn__active',
                 $apartmentsScheme,
                 selectedApartmentSecondBuild,
-                '[data-apartment-level-button]',
-                '[data-apartment-level-button][data-build]',
+                '[data-level-buttons-26-a] .apartment-level-btn__active',
+                '[data-level-buttons-26-a] .apartment-level-btn__active',
             );
+            // drawInformation(
+            //     parentElement,
+            //     targetElement,
+            //     allClasses,
+            //     activeClass,
+            //     apartmentsScheme,
+            //     selectedApartmentInfo,
+            //     activeHouseSelector = '[container-button-scheme] .label-button__active',
+            //     activeLevelSelector = '[data-level-buttons] .apartment-level-btn__active',
+            // )
             // const $parentElement = targetElement.closest('[data-apartment-info]');
 
             // toggleStyleOnActiveElement(

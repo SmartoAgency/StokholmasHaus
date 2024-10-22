@@ -25,8 +25,6 @@ const draggableMap = (mapContainer, mapSelector, markerMapSelector) => {
         smallY(-bigDraggable.y * imageScale);
     }
 
-    marker.addEventListener('click', openMapInNewTab);
-
     function openMapInNewTab() {
         window.open(
             'https://www.google.com/maps/dir//Stokholmas+iela+26,+Zieme%C4%BCu+rajons,+R%C4%ABga,+LV-1014',
@@ -34,7 +32,29 @@ const draggableMap = (mapContainer, mapSelector, markerMapSelector) => {
         );
     }
 
+    function setupSizing() {
+        const bigImageWidth = bigImage.getBoundingClientRect().width;
+
+        const imageScale = container.offsetWidth / bigImageWidth;
+        const aspectRatio = container.offsetWidth / container.getBoundingClientRect().height;
+
+        gsap.set(bigImage, {
+            width: imageScale * bigImage.offsetWidth,
+            height: (imageScale * bigImage.offsetWidth) / aspectRatio,
+        });
+    }
+
+    function resizeMap() {
+        setupSizing();
+        alignSmall();
+        bigDraggable.applyBounds();
+    }
+
+    setupSizing();
     alignSmall();
+
+    marker.addEventListener('click', openMapInNewTab);
+    window.addEventListener('resize', resizeMap);
 };
 
 export default draggableMap;

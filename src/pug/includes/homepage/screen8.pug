@@ -28,23 +28,30 @@ section#plans.home-screen8.screen-home(data-apartment-section)
                     thead
                         tr
                             td Общая площадь:
-                            td(data-apartment-label="currency") 154.6 м2
+                            //- td(data-apartment-label="currency") 154.6 м2
+                            td
+                                span.table-row-spinner.spinner
                         tr
                             td Количество комнат:
-                            td(data-apartment-label="all_room") 4
+                            //- td(data-apartment-label="all_room") 4
+                            td
+                                span.table-row-spinner.spinner
                     tbody
-                        tr 
-                            td Кухня:
-                            td(data-apartment-label="custom_field_1") 32.8 м2
-                        tr 
-                            td Ванная комната:
-                            td(data-apartment-label="custom_field_2") 12.4 м2
-                        tr 
-                            td Спальня:
-                            td(data-apartment-label="custom_field_3") 24.9 м2
-                        tr 
-                            td Детская комната:
-                            td(data-apartment-label="custom_field_4") 16.2 м2
+                        tr
+                            td(style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;")
+                                span.table-row-spinner.spinner
+                        //- tr 
+                        //-     td Кухня:
+                        //-     td(data-apartment-label="custom_field_1") 32.8 м2
+                        //- tr 
+                        //-     td Ванная комната:
+                        //-     td(data-apartment-label="custom_field_2") 12.4 м2
+                        //- tr 
+                        //-     td Спальня:
+                        //-     td(data-apartment-label="custom_field_3") 24.9 м2
+                        //- tr 
+                        //-     td Детская комната:
+                        //-     td(data-apartment-label="custom_field_4") 16.2 м2
             .apartment-scheme(data-apartment-scheme)
             .apartment-level
                 h3 Етаж
@@ -63,27 +70,33 @@ section#plans.home-screen8.screen-home(data-apartment-section)
                     thead
                         tr
                             td Общая площадь:
-                            td(data-apartment-label="currency") 154.6 м2
+                            //- td(data-apartment-label="currency") 154.6 м2
+                            td 
+                                span.table-row-spinner.spinner
                         tr
                             td Количество комнат:
-                            td(data-apartment-label="all_room") 4
+                            //- td(data-apartment-label="all_room") 4
+                            td
+                                span.table-row-spinner.spinner
                     tbody
-                        tr 
-                            td Кухня:
-                            td(data-apartment-label="custom_field_1") 32.8 м2
-                        tr 
-                            td Ванная комната:
-                            td(data-apartment-label="custom_field_2") 12.4 м2
-                        tr 
-                            td Спальня:
-                            td(data-apartment-label="custom_field_3") 24.9 м2
-                        tr 
-                            td Детская комната:
-                            td(data-apartment-label="custom_field_4") 16.2 м2
+                        td(style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;")
+                            span.table-row-spinner.spinner
+                        //- tr 
+                        //-     td Кухня:
+                        //-     td(data-apartment-label="custom_field_1") 32.8 м2
+                        //- tr 
+                        //-     td Ванная комната:
+                        //-     td(data-apartment-label="custom_field_2") 12.4 м2
+                        //- tr 
+                        //-     td Спальня:
+                        //-     td(data-apartment-label="custom_field_3") 24.9 м2
+                        //- tr 
+                        //-     td Детская комната:
+                        //-     td(data-apartment-label="custom_field_4") 16.2 м2
             .apartment-scheme(data-apartment-scheme)
             .apartment-level
                 h3 Етаж
-                .apartment-level-buttons(data-level-buttons)
-                    button(value=1 data-apartment-26-a-level data-apartment-level-button=1 data-build=3 ) 1
-                    button(value=2 data-apartment-26-a-level data-apartment-level-button=2 data-build=3).apartment-level-btn__active 2 
+                .apartment-level-buttons(data-level-buttons data-level-buttons-26-a)
+                    button(value=0 data-apartment-26-a-level data-apartment-level-button=0 data-build=3 ) 0
+                    button(value=1 data-apartment-26-a-level data-apartment-level-button=1 data-build=3).apartment-level-btn__active 1
 
