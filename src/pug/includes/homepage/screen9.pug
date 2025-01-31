@@ -29,7 +29,7 @@
         },
     ];
 
-section#gallery.home-screen9.screen-home
+section#gallery.home-screen9.screen-home(data-home-screen)
     .home-screen9-row.container
         .home-screen9-text
             h2.home-screen-title Визуальное путешествие по StokholmasHaus26
@@ -41,7 +41,49 @@ section#gallery.home-screen9.screen-home
                         span.button-item__desktop= apartment.title
                         span(class= apartment['mobileClass'])= apartment.mobileTitle
 
-        .home-screen9-img(data-photo-container)
-            +img('home/home-page-screen9.jpg')
-            +img('home/flat-1.jpg')
-            +img('home/flat-2.jpg')
+        .home-screen9-sliders(data-photo-container)
+            .gallery-slider(gallery-slider__26)
+                button(slider-btn__prev)
+                    +svg('slider-icon-btn__prev')
+                button(slider-btn__next)
+                    +svg('slider-icon-btn__next')   
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +img('home/home-page-screen9.jpg')
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+                        .swiper-slide
+                            +img('home/flat-2.jpg')
+            .gallery-slider(gallery-slider-26__c)
+                button(slider-btn__prev)
+                    +svg('slider-icon-btn__prev')
+                button(slider-btn__next)
+                    +svg('slider-icon-btn__next')
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+            .gallery-slider(gallery-slider-26__a)
+                button(slider-btn__prev)
+                    +svg('slider-icon-btn__prev')
+                button(slider-btn__next)
+                    +svg('slider-icon-btn__next')
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +img('home/flat-2.jpg')
+                        .swiper-slide
+                            +img('home/flat-1.jpg')
+                        .swiper-slide
+                            +img('home/flat-2.jpg')
+                        .swiper-slide
+                            +img('home/flat-2.jpg')

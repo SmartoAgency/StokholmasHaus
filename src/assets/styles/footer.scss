@@ -64,15 +64,28 @@
     }
     &-info {
         @extend .header-info;
+
         @media (max-width: 1500px) {
             margin-left: adaptive-size-width(100);
         }
         @media (max-width: 1300px) {
             margin-left: adaptive-size-width(80);
         }
+        &__inner {
+            @include tFlex();
+            gap: 40px;
+            @media (max-width: 768px) {
+                // flex-direction: column;
+                gap: 20px;
+            }
+            @media (max-width: 440px) {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
         &-tel {
             @include to(768px) {
-                display: none;
+                // display: none;
             }
         }
     }

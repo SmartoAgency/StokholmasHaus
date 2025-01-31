@@ -17,12 +17,12 @@
             link: '#plans',
         },
         {
-            title: 'Контакти',
-            link: '#contacts',
+            title: 'Контакты',
+            link: '#footer',
         },
     ]
 
-footer.footer
+footer.footer#footer
     .footer-row
         a(href="/").footer-logo StokholmasHAUS 26
         nav
@@ -31,7 +31,9 @@ footer.footer
                     li(scroll-up-arrow)
                         button(data-title= item.title data-id= item.link).header-menu__link.text-style-1920-nav.color-graphite= item.title
         .footer-info
-            a(href="tel:37126195195").footer-info-tel +371 26195195
+            .footer-info__inner
+                a(href="tel:37126195195").footer-info-tel +371 26195195
+                a(href="mailto:Info@st26.lv").footer-info-tel Info@st26.lv
             a(href="https://smarto.agency" target="_blank").dev-logo
                 <svg xmlns="http://www.w3.org/2000/svg" width="52" height="57" viewBox="0 0 52 57" fill="none">
                     <path d="M52 0H0V57H52V0Z" fill="#424242"/>

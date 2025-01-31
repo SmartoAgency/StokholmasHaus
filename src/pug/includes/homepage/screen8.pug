@@ -16,7 +16,7 @@
         },
     ];
 
-section#plans.home-screen8.screen-home(data-apartment-section)
+section.home-screen8.screen-home#plans(data-apartment-section data-home-screen)
     .home-screen8-row.container
         ul.home-screen8-buttons(container-button-scheme)
             each apartment in apartments
@@ -26,6 +26,13 @@ section#plans.home-screen8.screen-home(data-apartment-section)
             .apartment-info(data-apartment-info-table)
                 table
                     thead
+                        tr
+                            td Тип помещения
+                            td(data-apartment-type)
+                        tr
+                        tr
+                            td Номер квартиры
+                            td(data-apartment-number="number")
                         tr
                             td Общая площадь:
                             //- td(data-apartment-label="currency") 154.6 м2
@@ -58,7 +65,7 @@ section#plans.home-screen8.screen-home(data-apartment-section)
                 .apartment-level-buttons(data-level-buttons)
                     button(value=1 data-apartment-level data-section=1) 1
                     button(value=2 data-apartment-level data-section=2).apartment-level-btn__active 2 
-    .home-screen8-img
+    .home-screen8-img.screen-home
         .home-screen8-img__badge-one
             include ../homePageElements/pin.pug
             +badge('Stokholmas 26 A')
@@ -71,28 +78,32 @@ section#plans.home-screen8.screen-home(data-apartment-section)
                         tr
                             td Общая площадь:
                             //- td(data-apartment-label="currency") 154.6 м2
-                            td 
-                                span.table-row-spinner.spinner
+                            td 58.8 м2
+                            //- td 
+                            //-     span.table-row-spinner.spinner
                         tr
                             td Количество комнат:
                             //- td(data-apartment-label="all_room") 4
                             td
                                 span.table-row-spinner.spinner
                     tbody
-                        td(style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;")
-                            span.table-row-spinner.spinner
-                        //- tr 
-                        //-     td Кухня:
-                        //-     td(data-apartment-label="custom_field_1") 32.8 м2
-                        //- tr 
-                        //-     td Ванная комната:
-                        //-     td(data-apartment-label="custom_field_2") 12.4 м2
-                        //- tr 
-                        //-     td Спальня:
-                        //-     td(data-apartment-label="custom_field_3") 24.9 м2
-                        //- tr 
-                        //-     td Детская комната:
-                        //-     td(data-apartment-label="custom_field_4") 16.2 м2
+                        //- td(style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;")
+                        //-     span.table-row-spinner.spinner
+                        tr 
+                            td ХОЗЯЙСТВЕННОЕ ПОМЕЩЕНИЕ
+                            td(data-apartment-label="custom_field_1") 32.11 м2
+                        tr 
+                            td Кухня:
+                            td(data-apartment-label="custom_field_1") 32.8 м2
+                        tr 
+                            td Ванная комната:
+                            td(data-apartment-label="custom_field_2") 12.4 м2
+                        tr 
+                            td Спальня:
+                            td(data-apartment-label="custom_field_3") 24.9 м2
+                        tr 
+                            td Детская комната:
+                            td(data-apartment-label="custom_field_4") 16.2 м2
             .apartment-scheme(data-apartment-scheme)
             .apartment-level
                 h3 Етаж

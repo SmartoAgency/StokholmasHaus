@@ -122,7 +122,7 @@ $gold: #cfa46e;
 
 .table-row-spinner {
     @extend .spinner;
-    margin: 0;
+    margin: 0 0 0 auto;
     display: block;
     width: 15px;
     height: 15px;

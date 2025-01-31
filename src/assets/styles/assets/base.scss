@@ -88,6 +88,10 @@
     @include adaptive-font(18, 16);
     color: $mc5;
 
+    a {
+        text-decoration: underline;
+    }
+
     @media (min-width: 1921px) {
         @include adaptive-font(26, 16, 1880);
     }

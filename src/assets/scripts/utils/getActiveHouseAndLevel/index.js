@@ -3,13 +3,16 @@ export function getActiveHouseAndLevel(
     activeHouseSelector,
     activeLevelSelector,
 ) {
-    let activeHouse;
-    let activeLevel;
     const $container = document.querySelector('[data-apartment-section]');
 
-    activeHouse = $container.querySelector(activeHouseSelector).dataset.build;
-    activeLevel = $container.querySelector(activeLevelSelector).value;
+    selectedApartment.build = $container.querySelector(activeHouseSelector).dataset.build;
+    selectedApartment.section = $container.querySelector(activeLevelSelector).value;
+    // let activeHouse;
+    // let activeLevel;
 
-    selectedApartment.build = activeHouse;
-    selectedApartment.section = activeLevel;
+    // activeHouse = $container.querySelector(activeHouseSelector).dataset.build;
+    // activeLevel = $container.querySelector(activeLevelSelector).value;
+
+    // selectedApartment.build = activeHouse;
+    // selectedApartment.section = activeLevel;
 }

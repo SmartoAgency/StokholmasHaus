@@ -5,16 +5,16 @@
     z-index: 3;
     color: $mc;
     transition: transform 0.3s ease;
-
     &-inner {
-        padding: 38px 0 48px 0;
+        // padding: 38px 0 48px 0;
+        padding: adaptive-size-width(14) 0;
         @include to(768px) {
-            padding: 20px 0;
+            padding: 14px 0;
         }
 
-        @include to(1200px) {
-            padding: 25px 0;
-        }
+        // @include to(1200px) {
+        //     padding: 25px 0;
+        // }
     }
 
     &-row {
@@ -239,14 +239,19 @@
     &__list {
         @include tFlex();
         gap: 12px;
+        @media (max-width: 340px) {
+            gap: 8px;
+        }
     }
     &__list-item {
         @include tFlex(center, center);
         height: 42px;
         cursor: pointer;
         transition: opacity 0.3s ease;
-        &:hover {
-            opacity: 0.9;
+        @media (hover: hover) {
+            &:hover {
+                opacity: 0.9;
+            }
         }
         a {
             height: 100%;

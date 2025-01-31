@@ -2,12 +2,7 @@ import { gsap } from 'gsap/all';
 
 const addAnimationToMap = selector => {
     const badges = document.querySelectorAll(selector);
-    badges.forEach((badge, i) => {
-        badge.classList.add('circle-animation');
-        if (i === 0) {
-            badge.parentElement.classList.add('main-map-animation');
-        }
-    });
+    badges.forEach(badge => badge.classList.add('circle-animation'));
 
     gsap.to('.circle-animation', {
         repeat: Infinity,

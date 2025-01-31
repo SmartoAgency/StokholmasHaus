@@ -35,5 +35,6 @@ export function getPlanningsListByFloor({ build, section, floor }) {
 
 export async function getAllFlats() {
     const flatsData = await getPlanningsList();
-    localStorage.setItem('flats', JSON.stringify(flatsData.data));
+    return flatsData.data;
+    // localStorage.setItem('flats', JSON.stringify(flatsData.data));
 }

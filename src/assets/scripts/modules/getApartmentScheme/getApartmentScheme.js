@@ -1,10 +1,6 @@
 import { getInfoAboutCurrentFlat, drawInformation } from '../../utils/index.js';
-import { getAllFlats } from '../../api';
 
 const getApartmentScheme = containerSelector => {
-    localStorage.removeItem('flats');
-    getAllFlats();
-
     const $container = document.querySelector(containerSelector);
     const $apartmentsScheme = document.querySelectorAll('[data-apartment-scheme]');
 
@@ -31,12 +27,6 @@ const getApartmentScheme = containerSelector => {
                 $apartmentsScheme,
                 selectedApartmentFirstBuild,
             );
-            // const $parentElement = document.querySelector('.home-screen8-apartment');
-
-            // toggleStyleOnActiveElement(targetElement, '.label-button', 'label-button__active');
-            // getActiveHouseAndLevel(selectedApartmentFirstBuild);
-            // getApartment(selectedApartmentFirstBuild, $apartmentsScheme);
-            // getDefaultInfoAboutFlat($parentElement, selectedApartmentFirstBuild);
         }
 
         if (targetElement.closest('[data-apartment-level]')) {
@@ -49,17 +39,6 @@ const getApartmentScheme = containerSelector => {
                 $apartmentsScheme,
                 selectedApartmentFirstBuild,
             );
-            // toggleStyleOnActiveElement(
-            //     targetElement,
-            //     '[data-apartment-level]',
-            //     'apartment-level-btn__active',
-            // );
-            // getActiveHouseAndLevel(selectedApartmentFirstBuild);
-            // getApartment(selectedApartmentFirstBuild, $apartmentsScheme);
-
-            // const $parentElement = targetElement.closest('.home-screen8-apartment');
-
-            // getDefaultInfoAboutFlat($parentElement, selectedApartmentFirstBuild);
         }
 
         if (targetElement.closest('[data-apartment-level-button]')) {
@@ -74,30 +53,6 @@ const getApartmentScheme = containerSelector => {
                 '[data-level-buttons-26-a] .apartment-level-btn__active',
                 '[data-level-buttons-26-a] .apartment-level-btn__active',
             );
-            // drawInformation(
-            //     parentElement,
-            //     targetElement,
-            //     allClasses,
-            //     activeClass,
-            //     apartmentsScheme,
-            //     selectedApartmentInfo,
-            //     activeHouseSelector = '[container-button-scheme] .label-button__active',
-            //     activeLevelSelector = '[data-level-buttons] .apartment-level-btn__active',
-            // )
-            // const $parentElement = targetElement.closest('[data-apartment-info]');
-
-            // toggleStyleOnActiveElement(
-            //     targetElement,
-            //     '[data-apartment-26-a-level]',
-            //     'apartment-level-btn__active',
-            // );
-            // getActiveHouseAndLevel(
-            //     selectedApartmentSecondBuild,
-            //     '[data-apartment-level-button]',
-            //     '[data-apartment-level-button][data-build]',
-            // );
-            // getApartment(selectedApartmentSecondBuild, $apartmentsScheme);
-            // getDefaultInfoAboutFlat($parentElement, selectedApartmentSecondBuild);
         }
 
         if (targetElement.closest('.interactive-scheme polygon')) {

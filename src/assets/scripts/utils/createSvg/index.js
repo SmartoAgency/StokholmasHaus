@@ -2,22 +2,37 @@ export function createSvg(imgURL, width, height, polygons = '', apartments = [])
     const isPolygonsFromServer = typeof polygons === 'object';
     let polygonsFromServer = '';
 
+    let previousApartmentId;
+
+    if (JSON.parse(localStorage.getItem('flatId'))) {
+        const flatId = JSON.parse(localStorage.getItem('flatId'));
+        previousApartmentId = polygons.flatsIds.find(id => id === flatId);
+    }
+
     if (isPolygonsFromServer) {
         polygonsFromServer = Object.entries(polygons.cords).reduce((acc, [key, value], index) => {
             const apartment = apartments.find(
                 apartment => apartment.id == polygons.flatsIds[index],
             );
-            const sale = apartment ? apartment.sale : 0;
 
+            let isActive = null;
+            if (previousApartmentId) {
+                isActive = previousApartmentId === key;
+            } else {
+                isActive = index === 0;
+            }
+
+            const sale = apartment ? apartment.sale : 0;
             return (
                 acc +
                 `<polygon class="polygon-flat-scheme ${
-                    index === 0 ? 'active' : ''
+                    isActive ? 'active' : ''
                 }"  data-id="${key}" points="${value}" />`
                 // `<polygon data-sale="${sale}" data-id="${polygons.flatsIds[index]}" points="${value}" />`
             );
         }, '');
 
+        localStorage.removeItem('flatId');
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.classList.add('interactive-scheme');
         svg.setAttribute('width', '100%');

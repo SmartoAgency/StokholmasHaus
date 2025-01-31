@@ -18,9 +18,19 @@
 
 @font-face {
     font-family: 'Rain Tungsten';
-    src: url('../fonts/rainTungsten/RainTungsten-Medium.ttf') format('truetype');
+    src: url('../fonts/rainTungsten/RainTungsten-Medium.eot') format('eot');
+    src: local('Rain Tungsten'), local('Rain Tungsten'),
+        url('../fonts/rainTungsten/RainTungsten-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/rainTungsten/RainTungsten-Medium.woff') format('woff'),
+        url('../fonts/rainTungsten/RainTungsten-Medium.ttf') format('truetype');
     font-weight: 500;
 }
+
+// @font-face {
+//     font-family: 'Rain Tungsten';
+//     src: url('../fonts/rainTungsten/RainTungsten-Medium.ttf') format('truetype');
+//     font-weight: 500;
+// }
 
 @font-face {
     font-family: 'Inter';

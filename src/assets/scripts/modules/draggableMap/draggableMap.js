@@ -1,7 +1,9 @@
 import { gsap, Draggable } from 'gsap/all';
+import drawLocationMap from '../drawLocationMap';
+
 gsap.registerPlugin(Draggable);
 
-const draggableMap = (mapContainer, mapSelector, markerMapSelector) => {
+const draggableMap = async (mapContainer, mapSelector, markerMapSelector) => {
     const container = document.querySelector(mapContainer);
     let bigImage = document.querySelector(mapSelector),
         marker = document.querySelector(markerMapSelector),
@@ -15,10 +17,6 @@ const draggableMap = (mapContainer, mapSelector, markerMapSelector) => {
         onThrowUpdate: alignSmall,
         inertia: true,
     })[0];
-
-    Draggable.create(marker, {
-        onClick: openMapInNewTab,
-    });
 
     function alignSmall() {
         smallX(-bigDraggable.x * imageScale);
