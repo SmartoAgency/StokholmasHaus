@@ -1,12 +1,12 @@
 export function createSvg(imgURL, width, height, polygons = '', apartments = []) {
     const isPolygonsFromServer = typeof polygons === 'object';
     let polygonsFromServer = '';
-
+    let flatId;
     let previousApartmentId;
 
     if (JSON.parse(localStorage.getItem('flatId'))) {
-        const flatId = JSON.parse(localStorage.getItem('flatId'));
-        previousApartmentId = polygons.flatsIds.find(id => id === flatId);
+        flatId = JSON.parse(localStorage.getItem('flatId'));
+        previousApartmentId = polygons.flatsIds.find(id => Number(id) == flatId);
     }
 
     if (isPolygonsFromServer) {
@@ -16,10 +16,23 @@ export function createSvg(imgURL, width, height, polygons = '', apartments = [])
             );
 
             let isActive = null;
+
             if (previousApartmentId) {
                 isActive = previousApartmentId === key;
             } else {
                 isActive = index === 0;
+                if (flatId == 9 || flatId == 10) {
+                    key == 12 ? (isActive = true) : (isActive = false);
+                }
+                if (flatId == 13) {
+                    key == 11 ? (isActive = true) : (isActive = false);
+                }
+                if (flatId == 12) {
+                    key == 9 ? (isActive = true) : (isActive = false);
+                }
+                if (flatId == 11) {
+                    key == 13 ? (isActive = true) : (isActive = false);
+                }
             }
 
             const sale = apartment ? apartment.sale : 0;
