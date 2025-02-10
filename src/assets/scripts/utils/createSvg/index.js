@@ -35,7 +35,12 @@ export function createSvg(imgURL, width, height, polygons = '', apartments = [])
                 }
             }
 
+            if (!flatId && !previousApartmentId) {
+                key == 13 ? (isActive = true) : (isActive = false);
+            }
+
             const sale = apartment ? apartment.sale : 0;
+
             return (
                 acc +
                 `<polygon class="polygon-flat-scheme ${
