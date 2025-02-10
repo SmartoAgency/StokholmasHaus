@@ -44,8 +44,9 @@ export async function getInfoAboutCurrentFlat($tableContainer, id) {
             currentLangObj[selectedFlat?.type];
     }
 
-    $tableContainer.querySelector('[data-apartment-number="number"]').innerHTML =
-        selectedFlat.number;
+    $tableContainer.querySelector(
+        '[data-apartment-number="number"]',
+    ).innerHTML = `${selectedFlat.number}-${selectedFlat.sec_name}`;
 
     $tableContainer.querySelector('[data-apartment-label="all_room"]').innerHTML =
         selectedFlat.area + ' м2';
