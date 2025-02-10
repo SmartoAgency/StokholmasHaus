@@ -35,8 +35,8 @@ export function createSvg(imgURL, width, height, polygons = '', apartments = [])
                 }
             }
 
-            if (!flatId && !previousApartmentId) {
-                key == 13 ? (isActive = true) : (isActive = false);
+            if (!flatId && !previousApartmentId && key == 13) {
+                isActive = true;
             }
 
             const sale = apartment ? apartment.sale : 0;

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     upScroll();
     menu();
-    addAnimationToMap('.home-screen10-container svg g circle:first-of-type');
+    // addAnimationToMap('.home-screen10-container svg g circle:first-of-type');
     getApartmentScheme('[data-apartment-section]');
     draggableMap(
         '.home-screen10-container',
